@@ -22,12 +22,7 @@ class LoginViewController: UIViewController, VKSdkDelegate, VKSdkUIDelegate {
         sdkInstance?.uiDelegate = self
         VKSdk.wakeUpSession(SCOPE) { (state, error) in
             if state == VKAuthorizationState.authorized {
-//                let request = VKApi.friends()?.get(["fields" : "nickname, status"])
-//                request?.execute(resultBlock: { (response) in
-//                    response?.parsedModel
-//                }, errorBlock: { (error) in
-//
-//                })
+               
             } else if error != nil {
                 let alert = UIAlertController(title: nil, message: error.debugDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

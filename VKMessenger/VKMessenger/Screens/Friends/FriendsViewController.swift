@@ -15,11 +15,9 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     
-    
-    var arrayNickName = [VKUsersArray]()
     var arrayName = [String]()
+    var arrayPhoto = [String]()
     
-    let arrray = ["gkng","fgndgn","gndingin"]
     override func viewDidLoad() {
         super.viewDidLoad()
         regvest()
@@ -32,20 +30,29 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
-        cell?.textLabel?.text = self.arrayName[indexPath.row]
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
+        cell.nameLabel.text = self.arrayName[indexPath.row]
+        cell.photoView.layer.cornerRadius = 35
+        cell.photoView.contentMode = .scaleAspectFill
+        cell.photoView.layer.masksToBounds = true
+        let url = URL(string: arrayPhoto[indexPath.row])
+        if let data = try? Data(contentsOf: url!) {
+            cell.photoView.image = UIImage(data: data)
+        }
+        return cell
     }
     
     func regvest() {
         self.request?.execute(resultBlock: { response in
-            self.arrayNickName.append(((response?.parsedModel as! VKUsersArray)))
-            for i in 0..<self.arrayNickName[0].count {
-                self.arrayName.append(self.arrayNickName[0][i].first_name! + " " + self.arrayNickName[0][i].last_name!)
+            var arrayNickName = [VKUsersArray]()
+            
+            arrayNickName.append(((response?.parsedModel as! VKUsersArray)))
+            for i in 0..<arrayNickName[0].count {
+                self.arrayName.append(arrayNickName[0][i].first_name! + " " + arrayNickName[0][i].last_name!)
+                self.arrayPhoto.append(arrayNickName[0][i].photo_200_orig)
             }
             self.tableView.reloadData()
-            print(self.arrayName)
-
+            
         }, errorBlock: { (error) in
 
         })

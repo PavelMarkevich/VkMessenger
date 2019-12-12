@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		581738E97B82BE9ACF70B408 /* Pods_VKMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325BC3B7BB998E0201BB798D /* Pods_VKMessenger.framework */; };
+		84A5C57323A26FD200DD58FA /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A5C57223A26FD200DD58FA /* CustomTableViewCell.swift */; };
 		84ED76AC23992F180034C588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76AB23992F180034C588 /* AppDelegate.swift */; };
 		84ED76B023992F180034C588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76AF23992F180034C588 /* LoginViewController.swift */; };
 		84ED76B323992F180034C588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ED76B123992F180034C588 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		325BC3B7BB998E0201BB798D /* Pods_VKMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		766196FF4A5BBEE91C3A0B90 /* Pods-VKMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKMessenger.debug.xcconfig"; path = "Target Support Files/Pods-VKMessenger/Pods-VKMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		84A5C57223A26FD200DD58FA /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		84ED76A823992F180034C588 /* VKMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ED76AB23992F180034C588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84ED76AF23992F180034C588 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				84ED76C6239957A50034C588 /* FriendsViewController.swift */,
+				84A5C57223A26FD200DD58FA /* CustomTableViewCell.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ED76C7239957A50034C588 /* FriendsViewController.swift in Sources */,
+				84A5C57323A26FD200DD58FA /* CustomTableViewCell.swift in Sources */,
 				84ED76C9239957BB0034C588 /* ProfileViewController.swift in Sources */,
 				84ED76B023992F180034C588 /* LoginViewController.swift in Sources */,
 				84ED76AC23992F180034C588 /* AppDelegate.swift in Sources */,

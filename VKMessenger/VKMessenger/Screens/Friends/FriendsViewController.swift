@@ -32,7 +32,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! CustomTableViewCell
         cell.nameLabel.text = self.arrayName[indexPath.row]
-        cell.photoView.layer.cornerRadius = 35
+        cell.photoView.layer.cornerRadius = 32
         cell.photoView.contentMode = .scaleAspectFill
         cell.photoView.layer.masksToBounds = true
         let url = URL(string: arrayPhoto[indexPath.row])

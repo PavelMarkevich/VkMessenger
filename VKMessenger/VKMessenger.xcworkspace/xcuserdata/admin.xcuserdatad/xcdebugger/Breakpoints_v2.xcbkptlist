@@ -23,54 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E49D5DC8-29F4-4E55-ABC5-62D326B9C539"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VKMessenger/Service/VkSdkService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "init(controller:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E49D5DC8-29F4-4E55-ABC5-62D326B9C539 - bac6fccacf243ec8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VKMessenger.VkSdkService.__allocating_init(controller: __C.UIViewController) -&gt; VKMessenger.VkSdkService"
-                  moduleName = "VKMessenger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/VK/VKMessenger/VKMessenger/Service/VkSdkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  uuid = "E49D5DC8-29F4-4E55-ABC5-62D326B9C539 - 74e9b42d053327e5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VKMessenger.VkSdkService.init(controller: __C.UIViewController) -&gt; VKMessenger.VkSdkService"
-                  moduleName = "VKMessenger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/VK/VKMessenger/VKMessenger/Service/VkSdkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "35">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1892B823-3C96-496A-B334-74B45F0DBCAD"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -80,8 +32,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
-            landmarkName = "vkSdkNeedCaptchaEnter(_:)"
-            landmarkType = "7">
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -96,8 +48,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
             endingLineNumber = "61"
-            landmarkName = "vkSdkNeedCaptchaEnter(_:)"
-            landmarkType = "7">
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -112,24 +64,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "62"
             endingLineNumber = "62"
-            landmarkName = "vkSdkNeedCaptchaEnter(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0048AC75-E44E-4DD6-AC35-33D1E5AEB4AF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VKMessenger/Service/VkSdkService.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "vkSdkShouldPresent(_:)"
-            landmarkType = "7">
+            landmarkName = "LoginViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -17,7 +17,7 @@ class VKSDKService: NSObject, VKSdkDelegate,VKSdkUIDelegate {
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
         if let token = result.token {
             // success flow
-//            AppDelegate.shared.window?.rootViewController = UIViewController()
+            AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
             print(token)
         } else {
             // error
@@ -45,22 +45,28 @@ class VKSDKService: NSObject, VKSdkDelegate,VKSdkUIDelegate {
         vc?.present(in: self.controller.navigationController?.topViewController)
     }
     
-    func authorize() {
-        
+    func authorize() -> Bool {
+        var stateAuthorize: Bool = false
         let sdkInstance = VKSdk.initialize(withAppId: "7215778")
         sdkInstance?.register(self)
         sdkInstance?.uiDelegate = self
         
         VKSdk.wakeUpSession(SCOPE) { (state, error) in
             if state == VKAuthorizationState.authorized {
-                AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
-                print(state)
+                stateAuthorize = true
             } else if error != nil {
                 let alert = UIAlertController(title: nil, message: error.debugDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.controller.present(alert, animated: true)
             }
         }
+        return stateAuthorize
+    }
+    
+    func stt(delegate: VKSdkDelegate, uiDelegate: VKSdkUIDelegate) {
+        let sdkInstance = VKSdk.initialize(withAppId: "7215778")
+        sdkInstance?.register(delegate)
+        sdkInstance?.uiDelegate = uiDelegate
     }
 
     init(controller: UIViewController) {

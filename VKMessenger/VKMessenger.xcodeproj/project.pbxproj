@@ -76,17 +76,10 @@
 		8465AF2523E16130006D4B63 /* Start Screen */ = {
 			isa = PBXGroup;
 			children = (
+				8465AF2923E16235006D4B63 /* VKSDKService.swift */,
 				8465AF2623E16161006D4B63 /* RootViewController.swift */,
 			);
 			path = "Start Screen";
-			sourceTree = "<group>";
-		};
-		8465AF2823E161FD006D4B63 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				8465AF2923E16235006D4B63 /* VKSDKService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		84ED769F23992F180034C588 = {
@@ -110,7 +103,6 @@
 		84ED76AA23992F180034C588 /* VKMessenger */ = {
 			isa = PBXGroup;
 			children = (
-				8465AF2823E161FD006D4B63 /* Service */,
 				84ED76C1239956CD0034C588 /* Screens */,
 				84ED76AB23992F180034C588 /* AppDelegate.swift */,
 				84ED76B123992F180034C588 /* Main.storyboard */,

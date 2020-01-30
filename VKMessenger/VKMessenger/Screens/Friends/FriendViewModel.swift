@@ -26,5 +26,21 @@ class FriendViewModel {
             completion(.failure(error ?? NSError()))
         })
     }
+    
+    func createDictionary(users: [String], dictionary: inout [String: [String]], userSection: inout [String] ) {
+        dictionary = [String: [String]]()
+        userSection = [String]()
+        for user in users {
+            let userKey = String(user.prefix(1))
+            if var userValues = dictionary[userKey] {
+                userValues.append(user)
+                dictionary[userKey] = userValues
+            } else {
+                dictionary[userKey] = [user]
+            }
+        }
+        userSection = [String](dictionary.keys)
+        userSection = userSection.sorted(by: { $0 < $1 })
+    }
 
 }

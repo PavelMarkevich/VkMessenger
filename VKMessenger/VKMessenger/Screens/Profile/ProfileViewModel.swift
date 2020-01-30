@@ -24,5 +24,4 @@ class ProfileViewModel {
             completion(.failure(error ?? NSError()))
         })
     }
-    
 }

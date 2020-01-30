@@ -18,9 +18,10 @@ class ProfileViewController: UIViewController {
         loadProfile()
     }
     
-//    @IBAction func logout(_ sender: Any) {
-//        
-//    }
+    @IBAction func logout(_ sender: Any) {
+        VKSdk.forceLogout()
+        AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+    }
     
     @IBOutlet weak var photoImage: UIImageView!
     

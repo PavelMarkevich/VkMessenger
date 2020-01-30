@@ -14,11 +14,10 @@ class FriendTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-        photoView.layer.cornerRadius = 35
-        photoView.contentMode = .scaleAspectFill
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        photoView.layer.cornerRadius = 23
+        photoView.contentMode = .scaleToFill
         photoView.layer.masksToBounds = true
     }
 }

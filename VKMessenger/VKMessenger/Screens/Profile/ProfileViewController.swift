@@ -18,6 +18,9 @@ class ProfileViewController: UIViewController {
         loadProfile()
     }
     
+//    @IBAction func logout(_ sender: Any) {
+//        
+//    }
     
     @IBOutlet weak var photoImage: UIImageView!
     

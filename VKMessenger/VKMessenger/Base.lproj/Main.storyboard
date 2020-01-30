@@ -110,9 +110,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDx-Uw-Mfn">
+                                <rect key="frame" x="331" y="0.0" width="28" height="30"/>
+                                <state key="normal" title="Exit">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="ez5-Wz-w8a" eventType="touchUpInside" id="3am-nq-oxv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.28513316900000002" green="0.54847108209999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xDx-Uw-Mfn" firstAttribute="trailing" secondItem="3Vy-xH-CUf" secondAttribute="trailingMargin" id="3aa-ch-ty6"/>
                             <constraint firstItem="p0a-w4-dXa" firstAttribute="top" secondItem="IWK-a0-GfB" secondAttribute="bottom" constant="36" id="3pc-yi-25x"/>
                             <constraint firstItem="IWK-a0-GfB" firstAttribute="leading" secondItem="vQO-M2-Imi" secondAttribute="leading" constant="8" id="4HX-qM-xC1"/>
                             <constraint firstItem="S70-nr-42C" firstAttribute="leading" secondItem="qQp-kt-gvX" secondAttribute="leading" id="4Z4-d7-faL"/>
@@ -121,8 +131,10 @@
                             <constraint firstItem="IWK-a0-GfB" firstAttribute="top" secondItem="vQO-M2-Imi" secondAttribute="top" constant="20" id="Pzz-Pk-K1p"/>
                             <constraint firstItem="S70-nr-42C" firstAttribute="top" secondItem="IWK-a0-GfB" secondAttribute="top" id="Zes-jt-1cV"/>
                             <constraint firstAttribute="trailing" secondItem="p0a-w4-dXa" secondAttribute="trailing" id="liY-zP-VN7"/>
+                            <constraint firstItem="xDx-Uw-Mfn" firstAttribute="top" secondItem="vQO-M2-Imi" secondAttribute="top" id="uAf-6Y-BMB"/>
                             <constraint firstItem="p0a-w4-dXa" firstAttribute="leading" secondItem="3Vy-xH-CUf" secondAttribute="leading" id="v0u-dU-4y8"/>
                             <constraint firstItem="vQO-M2-Imi" firstAttribute="trailing" secondItem="S70-nr-42C" secondAttribute="trailing" constant="54" id="vo0-cQ-dgo"/>
+                            <constraint firstItem="xDx-Uw-Mfn" firstAttribute="leading" secondItem="S70-nr-42C" secondAttribute="trailing" constant="10" id="wZ2-bK-ygb"/>
                             <constraint firstItem="S70-nr-42C" firstAttribute="trailing" secondItem="qQp-kt-gvX" secondAttribute="trailing" id="x7H-yG-D2c"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vQO-M2-Imi"/>

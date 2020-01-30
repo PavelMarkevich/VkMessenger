@@ -13,15 +13,7 @@ class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chekState()
-    }
-    
-    func chekState() {
         let servise = VKSDKService(controller: self)
-        if servise.authorize() == true {
-            AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
-        } else {
-            AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
-        }
+        servise.authorize()
     }
 }

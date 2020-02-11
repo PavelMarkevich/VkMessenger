@@ -11,9 +11,10 @@ import VK_ios_sdk
 
 class FriendViewModel {
     
-    let request = VKApi.friends()?.get(["fields" : "nickname, photo_200_orig"])
+    let service = VKSDKService()
 
     func loadModel(completion: @escaping (Result<[UserModel], Error>) -> Void) {
+        let request = service.getFriends()
         request?.execute(resultBlock: { response in
             var array = [VKUsersArray]()
             var arrayUser = [UserModel]()

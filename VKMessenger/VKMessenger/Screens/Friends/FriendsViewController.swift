@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import VK_ios_sdk
 
 class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -28,8 +27,9 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! FriendTableViewCell
-        cell.nameLabel.text = self.user[indexPath.row].name
-        cell.photoView.image = UIImage(named: "photo")
+//        cell.nameLabel.text = self.user[indexPath.row].name
+//        cell.photoView.image = UIImage(named: "photo")
+        cell.configure(with: self.user[indexPath.row])
         return cell
     }
     

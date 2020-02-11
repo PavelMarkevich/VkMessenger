@@ -14,6 +14,7 @@
 		8465AF2E23E178CD006D4B63 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2D23E178CD006D4B63 /* ProfileViewModel.swift */; };
 		8465AF3023E17EE9006D4B63 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */; };
 		8465AF3223E1A2E3006D4B63 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */; };
+		8490F80123F2F188008B6CC4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8490F80023F2F188008B6CC4 /* .gitignore */; };
 		84ED76AC23992F180034C588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76AB23992F180034C588 /* AppDelegate.swift */; };
 		84ED76B023992F180034C588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76AF23992F180034C588 /* LoginViewController.swift */; };
 		84ED76B323992F180034C588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ED76B123992F180034C588 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		8465AF2D23E178CD006D4B63 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
 		8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		8490F80023F2F188008B6CC4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		84ED76A823992F180034C588 /* VKMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ED76AB23992F180034C588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84ED76AF23992F180034C588 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -82,11 +84,20 @@
 			path = "Start Screen";
 			sourceTree = "<group>";
 		};
+		8490F7FF23F2F12C008B6CC4 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				8490F80023F2F188008B6CC4 /* .gitignore */,
+			);
+			path = Git;
+			sourceTree = "<group>";
+		};
 		84ED769F23992F180034C588 = {
 			isa = PBXGroup;
 			children = (
 				84ED76AA23992F180034C588 /* VKMessenger */,
 				84ED76A923992F180034C588 /* Products */,
+				8490F7FF23F2F12C008B6CC4 /* Git */,
 				7E5DE8552B4D4E0315E882DE /* Pods */,
 				4234D4CC7EC1037F939F55AC /* Frameworks */,
 			);
@@ -212,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8490F80123F2F188008B6CC4 /* .gitignore in Resources */,
 				84ED76B823992F190034C588 /* LaunchScreen.storyboard in Resources */,
 				84ED76B523992F190034C588 /* Assets.xcassets in Resources */,
 				84ED76B323992F180034C588 /* Main.storyboard in Resources */,

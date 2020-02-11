@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import VK_ios_sdk
 
 class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let servise = VKSDKService(controller: self)
-        servise.authorize()
+        let servise = VKSDKService()
+        servise.authorize(controller: self)
     }
 }

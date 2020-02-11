@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import VK_ios_sdk
 
 class ProfileViewController: UIViewController {
     
     let viewModel: ProfileViewModel = ProfileViewModel()
+    let service = VKSDKService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: Any) {
-        VKSdk.forceLogout()
+        service.logout()
         AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
     }
     

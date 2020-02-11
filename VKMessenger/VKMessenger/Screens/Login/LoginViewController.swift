@@ -11,18 +11,17 @@ import VK_ios_sdk
 
 class LoginViewController: UIViewController, VKSdkUIDelegate, VKSdkDelegate {
 
-    let SCOPE = ["friends", "email"];
+    let servise = VKSDKService()
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let servise = VKSDKService(controller: self)
         servise.registerDelegate(delegate: self, uiDelegate: self)
         
     }
     
     @IBAction func authorize(_ sender: Any) {
-        VKSdk.authorize(self.SCOPE)
+        servise.login()
     }
     
     func vkSdkShouldPresent(_ controller: UIViewController!) {

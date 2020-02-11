@@ -27,7 +27,7 @@ class FriendViewModel {
         })
     }
     
-    func createDictionary(users: [String], dictionary: inout [String: [String]], userSection: inout [String] ) {
+    func createSectionAndSortedUsers(users: [String], dictionary: inout [String: [String]], userSection: inout [String] ) {
         dictionary = [String: [String]]()
         userSection = [String]()
         for user in users {

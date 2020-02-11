@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import VK_ios_sdk
 
 class RootViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let servise = VKSDKService()
-        servise.authorize(controller: self)
+        let service = VKSDKService()
+        service.authorize(controller: self) { result in
+            switch result {
+            case .success:
+                AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
+            case .failure(let error):
+                print(error)
+                AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+            }
+        }
     }
 }

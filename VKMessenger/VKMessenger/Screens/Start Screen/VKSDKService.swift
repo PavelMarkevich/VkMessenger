@@ -9,21 +9,26 @@
 import Foundation
 import VK_ios_sdk
 
+enum AuthResult {
+    case authorized
+    case error(Error)
+    case login
+}
+
 class VKSDKService {
     
     let SCOPE = ["friends", "email"]
     let sdkInstance = VKSdk.initialize(withAppId: "7215778")
+    var delegate: VKDelegate?
 
-    func authorize(controller: UIViewController) {
+    func authorize(controller: UIViewController, completion: @escaping (Result<Bool, Error>) -> Void) {
         VKSdk.wakeUpSession(SCOPE) { (state, error) in
             if state == VKAuthorizationState.authorized {
-                AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
-            } else if error != nil {
-                let alert = UIAlertController(title: nil, message: error.debugDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                controller.present(alert, animated: true)
+                completion(.success(true))
+            } else if let error = error {
+                completion(.failure(error))
             } else {
-                AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+                completion(.success(false))
             }
         }
     }
@@ -33,15 +38,13 @@ class VKSDKService {
     }
     
     func getFriends() -> VKRequest? {
-        return VKApi.friends()?.get(["fields" : "nickname, photo_200_orig"])
+        return VKApi.friends()?.get(["fields" : "nickname, photo_200_orig, status, online"])
     }
     
-    func registerDelegate(delegate: VKSdkDelegate, uiDelegate: VKSdkUIDelegate) {
+    func login(from controller: UIViewController, completion: @escaping (Bool) -> Void) {
+        delegate = VKDelegate(controller: controller, completion: completion)
         sdkInstance?.register(delegate)
-        sdkInstance?.uiDelegate = uiDelegate
-    }
-    
-    func login() {
+        sdkInstance?.uiDelegate = delegate
         VKSdk.authorize(SCOPE)
     }
     

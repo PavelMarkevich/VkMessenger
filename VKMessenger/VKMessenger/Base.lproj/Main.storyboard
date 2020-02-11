@@ -236,7 +236,7 @@
         <!--Friend Profile View Controller-->
         <scene sceneID="Z9U-mr-HMd">
             <objects>
-                <viewController id="mvF-Dz-5Nj" userLabel="Friend Profile View Controller" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendProfileViewController" id="mvF-Dz-5Nj" userLabel="Friend Profile View Controller" customClass="FriendProfileViewController" customModule="VKMessenger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kKQ-xm-yHi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

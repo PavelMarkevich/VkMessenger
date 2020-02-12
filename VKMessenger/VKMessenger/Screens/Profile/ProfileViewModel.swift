@@ -11,9 +11,10 @@ import VK_ios_sdk
 
 class ProfileViewModel {
     
-    let request = VKApi.users()?.get(["fields" : "nickname, photo_200_orig, home_town, online, education, status, university, bdate"])
+    let service = VKSDKService()
     
     func loadModel(completion: @escaping (Result<UserModel, Error>) -> Void) {
+        let request = service.getUser()
         request?.execute(resultBlock: { response in
             let name = ((response?.parsedModel as! VKUsersArray).items.firstObject as! VKUser).first_name + " " + ((response?.parsedModel as! VKUsersArray).items.firstObject as! VKUser).last_name
             let bdate = ((response?.parsedModel as! VKUsersArray).items.firstObject as! VKUser).bdate

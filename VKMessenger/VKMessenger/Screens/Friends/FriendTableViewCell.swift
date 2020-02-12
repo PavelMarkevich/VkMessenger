@@ -14,10 +14,8 @@ class FriendTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        photoView.layer.cornerRadius = 23
-        photoView.contentMode = .scaleToFill
-        photoView.layer.masksToBounds = true
+    func configure(with friend: UserModel) {
+        nameLabel.text = friend.name
+        photoView.image = UIImage(named: "photo")
     }
 }

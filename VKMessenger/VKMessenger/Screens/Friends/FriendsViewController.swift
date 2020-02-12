@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import VK_ios_sdk
 
 class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
@@ -33,8 +32,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! FriendTableViewCell
-        cell.nameLabel.text = filterUser[indexPath.row]
-        cell.photoView.image = UIImage(named: "photo")
+        cell.configure(with: self.user[indexPath.row])
         return cell
     }
     

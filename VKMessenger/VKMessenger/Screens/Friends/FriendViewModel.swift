@@ -9,9 +9,16 @@
 import Foundation
 import VK_ios_sdk
 
+struct Group {
+    var title: String
+    var usersNames: [String]
+}
+
 class FriendViewModel {
     
     let service = VKSDKService()
+    var group = [Group]()
+    var filterGroup = [Group]()
 
     func loadModel(completion: @escaping (Result<[UserModel], Error>) -> Void) {
         let request = service.getFriends()
@@ -28,10 +35,16 @@ class FriendViewModel {
         })
     }
     
-    func createSectionAndSortedUsers(users: [String], dictionary: inout [String: [String]], userSection: inout [String] ) {
-        dictionary = [String: [String]]()
-        userSection = [String]()
-        for user in users {
+    func grouping(users: [UserModel]) {
+        
+        var nameUsers = [String]()
+        
+        var dictionary = [String: [String]]()
+        
+        for i in 0..<users.count {
+            nameUsers.append(users[i].name)
+        }
+        for user in nameUsers {
             let userKey = String(user.prefix(1))
             if var userValues = dictionary[userKey] {
                 userValues.append(user)
@@ -40,8 +53,36 @@ class FriendViewModel {
                 dictionary[userKey] = [user]
             }
         }
-        userSection = [String](dictionary.keys)
-        userSection = userSection.sorted(by: { $0 < $1 })
+        for item in dictionary {
+            self.group.append(Group(title: item.key, usersNames: item.value))
+        }
+        group = group.sorted(by: { $0.title < $1.title })
+        filterGroup = group
     }
-
+    
+    func countOfSector() -> Int {
+        return filterGroup.count
+    }
+    
+    func numberOfRowsInSection(section: Int) -> Int {
+        return filterGroup[section].usersNames.count
+    }
+    
+    func titleForHeaderInSection(section: Int) -> String? {
+        return filterGroup[section].title
+    }
+    
+    func fillingTableView(indexPath: IndexPath) -> String? {
+        return filterGroup[indexPath.section].usersNames[indexPath.row]
+    }
+    
+    func searchBar(textDidChange searchText: String) {
+        filterGroup = group
+        if searchText.count != 0 {
+            for i in 0..<group.count {
+                filterGroup[i].usersNames = group[i].usersNames.filter({ $0.range(of: searchText, options: .caseInsensitive) != nil })
+                filterGroup[i].title = ""
+            }
+        }
+    }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		581738E97B82BE9ACF70B408 /* Pods_VKMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325BC3B7BB998E0201BB798D /* Pods_VKMessenger.framework */; };
-		844709A223E3299C00A7028B /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844709A123E3299C00A7028B /* FriendProfileViewController.swift */; };
 		8465AF2723E16161006D4B63 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2623E16161006D4B63 /* RootViewController.swift */; };
 		8465AF2A23E16235006D4B63 /* VKSDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2923E16235006D4B63 /* VKSDKService.swift */; };
 		8465AF2C23E17876006D4B63 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2B23E17876006D4B63 /* UserModel.swift */; };
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		325BC3B7BB998E0201BB798D /* Pods_VKMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		766196FF4A5BBEE91C3A0B90 /* Pods-VKMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKMessenger.debug.xcconfig"; path = "Target Support Files/Pods-VKMessenger/Pods-VKMessenger.debug.xcconfig"; sourceTree = "<group>"; };
-		844709A123E3299C00A7028B /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
 		8465AF2623E16161006D4B63 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		8465AF2923E16235006D4B63 /* VKSDKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKSDKService.swift; sourceTree = "<group>"; };
 		8465AF2B23E17876006D4B63 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 				84ED76C6239957A50034C588 /* FriendsViewController.swift */,
 				8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */,
 				8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */,
-				844709A123E3299C00A7028B /* FriendProfileViewController.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -289,7 +286,6 @@
 				8465AF3023E17EE9006D4B63 /* FriendViewModel.swift in Sources */,
 				8465AF2A23E16235006D4B63 /* VKSDKService.swift in Sources */,
 				84ED76C7239957A50034C588 /* FriendsViewController.swift in Sources */,
-				844709A223E3299C00A7028B /* FriendProfileViewController.swift in Sources */,
 				8465AF2C23E17876006D4B63 /* UserModel.swift in Sources */,
 				8465AF2E23E178CD006D4B63 /* ProfileViewModel.swift in Sources */,
 				8465AF2723E16161006D4B63 /* RootViewController.swift in Sources */,

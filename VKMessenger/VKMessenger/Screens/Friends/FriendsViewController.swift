@@ -27,9 +27,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! FriendTableViewCell
-        cell.configure(with: viewModel.fillingTableView(indexPath: indexPath))
-        return cell
+        return viewModel.fillingTableView(tableView: tableView, indexPath: indexPath)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -38,7 +36,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.countOfSector()
+        return viewModel.countOfSections()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -49,7 +47,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         viewModel.loadModel { [weak self] result in
             switch result {
             case .success(let model):
-                self?.viewModel.grouping(users: model)
+                self?.viewModel.getUserModel(usersModel: model)
                 self?.tableView.reloadData()
             case .failure(let error):
                 print(error)

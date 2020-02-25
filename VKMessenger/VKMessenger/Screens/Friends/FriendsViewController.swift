@@ -25,20 +25,20 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection(section: section)
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return viewModel.fillingTableView(tableView: tableView, indexPath: indexPath)
     }
-    
+
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchBar(textDidChange: searchText)
         tableView.reloadData()
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.countOfSections()
     }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.titleForHeaderInSection(section: section)
     }

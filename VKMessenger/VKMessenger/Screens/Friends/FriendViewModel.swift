@@ -12,7 +12,7 @@ import VK_ios_sdk
 
 struct Group {
     var title: String
-    var usersNames: [String]
+    var usersModel: [UserModel]
 }
 
 class FriendViewModel {
@@ -20,7 +20,6 @@ class FriendViewModel {
     let service = VKSDKService()
     var groupUsers = [Group]()
     var filterGroupUsers = [Group]()
-    var usersModel = [UserModel]()
 
     func loadModel(completion: @escaping (Result<[UserModel], Error>) -> Void) {
         let request = service.getFriends()
@@ -38,21 +37,13 @@ class FriendViewModel {
     }
     
     func getUserModel(usersModel: [UserModel]) {
-        self.usersModel = usersModel
-        grouping()
+        grouping(userModel: usersModel)
     }
     
-    func grouping() {
-        
-        var nameUsers = [String]()
-        
-        var dictionary = [String: [String]]()
-        
-        for i in 0..<usersModel.count {
-            nameUsers.append(usersModel[i].name)
-        }
-        for user in nameUsers {
-            let userKey = String(user.prefix(1))
+    func grouping(userModel: [UserModel]) {
+        var dictionary = [String: [UserModel]]()
+        for user in userModel {
+            let userKey = String(user.name.prefix(1))
             if var userValues = dictionary[userKey] {
                 userValues.append(user)
                 dictionary[userKey] = userValues
@@ -61,7 +52,7 @@ class FriendViewModel {
             }
         }
         for item in dictionary {
-            self.groupUsers.append(Group(title: item.key, usersNames: item.value))
+            self.groupUsers.append(Group(title: item.key, usersModel: item.value))
         }
         groupUsers = groupUsers.sorted(by: { $0.title < $1.title })
         filterGroupUsers = groupUsers
@@ -72,7 +63,7 @@ class FriendViewModel {
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
-        return filterGroupUsers[section].usersNames.count
+        return filterGroupUsers[section].usersModel.count
     }
     
     func titleForHeaderInSection(section: Int) -> String? {
@@ -81,17 +72,18 @@ class FriendViewModel {
     
     func fillingTableView(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! FriendTableViewCell
-        cell.configure(with: filterGroupUsers[indexPath.section].usersNames[indexPath.row])
+        cell.configure(with: filterGroupUsers[indexPath.section].usersModel[indexPath.row].name)
         return cell
     }
     
     func searchBar(textDidChange searchText: String) {
         filterGroupUsers = groupUsers
-        if searchText.count != 0 {
-            for i in 0..<groupUsers.count {
-                filterGroupUsers[i].usersNames = groupUsers[i].usersNames.filter({ $0.range(of: searchText, options: .caseInsensitive) != nil })
+        if searchText.count != 0{
+            for i in 0..<groupUsers.count{
+                filterGroupUsers[i].usersModel = groupUsers[i].usersModel.filter({ $0.name.range(of: searchText, options: .caseInsensitive) != nil })
                 filterGroupUsers[i].title = ""
             }
         }
     }
 }
+

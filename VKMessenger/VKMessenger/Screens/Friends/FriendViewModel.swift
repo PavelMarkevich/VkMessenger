@@ -12,16 +12,16 @@ import VK_ios_sdk
 
 struct Group {
     var title: String
-    var usersModel: [UserModel]
+    var usersModels: [UserModel]
 }
 
 class FriendViewModel {
     
     let service = VKSDKService()
-    var groupUsers = [Group]()
-    var filterGroupUsers = [Group]()
+    var usersGroups = [Group]()
+    var filterUsersGroups = [Group]()
 
-    func loadModel(completion: @escaping (Result<[UserModel], Error>) -> Void) {
+    func loadModel(completion: @escaping (Result<Void, Error>) -> Void) {
         let request = service.getFriends()
         request?.execute(resultBlock: { response in
             var array = [VKUsersArray]()
@@ -30,14 +30,11 @@ class FriendViewModel {
             for i in 0..<array[0].count {
                 arrayUser.append(UserModel(name: array[0][i].first_name + " " + array[0][i].last_name, bdate: "", status: ""))
             }
-            completion(.success(arrayUser))
+            self.grouping(userModel: arrayUser)
+            completion(.success(()))
         }, errorBlock: { error in
             completion(.failure(error ?? NSError()))
         })
-    }
-    
-    func getUserModel(usersModel: [UserModel]) {
-        grouping(userModel: usersModel)
     }
     
     func grouping(userModel: [UserModel]) {
@@ -52,36 +49,34 @@ class FriendViewModel {
             }
         }
         for item in dictionary {
-            self.groupUsers.append(Group(title: item.key, usersModel: item.value))
+            self.usersGroups.append(Group(title: item.key, usersModels: item.value))
         }
-        groupUsers = groupUsers.sorted(by: { $0.title < $1.title })
-        filterGroupUsers = groupUsers
+        usersGroups = usersGroups.sorted(by: { $0.title < $1.title })
+        filterUsersGroups = usersGroups
     }
     
     func countOfSections() -> Int {
-        return filterGroupUsers.count
+        return filterUsersGroups.count
     }
     
     func numberOfRowsInSection(section: Int) -> Int {
-        return filterGroupUsers[section].usersModel.count
+        return filterUsersGroups[section].usersModels.count
     }
     
     func titleForHeaderInSection(section: Int) -> String? {
-        return filterGroupUsers[section].title
+        return filterUsersGroups[section].title
     }
     
-    func fillingTableView(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! FriendTableViewCell
-        cell.configure(with: filterGroupUsers[indexPath.section].usersModel[indexPath.row].name)
-        return cell
+    func getUserName(at indexPath: IndexPath) -> String {
+        return filterUsersGroups[indexPath.section].usersModels[indexPath.row].name
     }
     
     func searchBar(textDidChange searchText: String) {
-        filterGroupUsers = groupUsers
+        filterUsersGroups = usersGroups
         if searchText.count != 0{
-            for i in 0..<groupUsers.count{
-                filterGroupUsers[i].usersModel = groupUsers[i].usersModel.filter({ $0.name.range(of: searchText, options: .caseInsensitive) != nil })
-                filterGroupUsers[i].title = ""
+            for i in 0..<usersGroups.count{
+                filterUsersGroups[i].usersModels = usersGroups[i].usersModels.filter({ $0.name.range(of: searchText, options: .caseInsensitive) != nil })
+                filterUsersGroups[i].title = ""
             }
         }
     }

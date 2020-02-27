@@ -27,7 +27,10 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return viewModel.fillingTableView(tableView: tableView, indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! FriendTableViewCell
+        let userName = viewModel.getUserName(at: indexPath)
+        cell.configure(with: userName)
+        return cell
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -46,8 +49,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     func loadFriend() {
         viewModel.loadModel { [weak self] result in
             switch result {
-            case .success(let model):
-                self?.viewModel.getUserModel(usersModel: model)
+            case .success:
                 self?.tableView.reloadData()
             case .failure(let error):
                 print(error)

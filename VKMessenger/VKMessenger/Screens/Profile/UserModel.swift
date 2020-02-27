@@ -12,4 +12,5 @@ struct UserModel {
     let name: String
     let bdate: String
     let status: String
+    let urlPhoto: String?
 }

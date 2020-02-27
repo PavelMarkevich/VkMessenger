@@ -28,7 +28,7 @@ class FriendViewModel {
             var arrayUser = [UserModel]()
             array.append((response?.parsedModel as! VKUsersArray))
             for i in 0..<array[0].count {
-                arrayUser.append(UserModel(name: array[0][i].first_name + " " + array[0][i].last_name, bdate: "", status: ""))
+                arrayUser.append(UserModel(name: array[0][i].first_name + " " + array[0][i].last_name, bdate: "", status: "", urlPhoto: array[0][i].photo_200_orig))
             }
             self.grouping(userModel: arrayUser)
             completion(.success(()))
@@ -73,7 +73,7 @@ class FriendViewModel {
     
     func searchBar(textDidChange searchText: String) {
         filterUsersGroups = usersGroups
-        if searchText.count != 0{
+        if searchText.count != 0 {
             for i in 0..<usersGroups.count{
                 filterUsersGroups[i].usersModels = usersGroups[i].usersModels.filter({ $0.name.range(of: searchText, options: .caseInsensitive) != nil })
                 filterUsersGroups[i].title = ""

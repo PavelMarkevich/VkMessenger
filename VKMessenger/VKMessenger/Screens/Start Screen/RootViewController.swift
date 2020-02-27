@@ -16,8 +16,12 @@ class RootViewController: UIViewController {
         let service = VKSDKService()
         service.authorize(controller: self) { result in
             switch result {
-            case .success:
-                AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
+            case .success(let state):
+                if state == true {
+                    AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
+                } else {
+                    AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+                }
             case .failure(let error):
                 print(error)
                 AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")

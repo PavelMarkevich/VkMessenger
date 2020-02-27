@@ -13,7 +13,7 @@ class NetworkService {
     
     func getPhotoUser(user: UserModel, completion: @escaping (Result<UIImage, Error>) -> Void) {
         guard let urlPhoto = user.urlPhoto else {
-            fatalError()
+            return
         }
         
         let urlPhotoUser = URL(string: urlPhoto)

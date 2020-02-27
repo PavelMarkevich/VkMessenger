@@ -67,8 +67,8 @@ class FriendViewModel {
         return filterUsersGroups[section].title
     }
     
-    func getUserName(at indexPath: IndexPath) -> String {
-        return filterUsersGroups[indexPath.section].usersModels[indexPath.row].name
+    func getUser(at indexPath: IndexPath) -> UserModel {
+        return filterUsersGroups[indexPath.section].usersModels[indexPath.row]
     }
     
     func searchBar(textDidChange searchText: String) {

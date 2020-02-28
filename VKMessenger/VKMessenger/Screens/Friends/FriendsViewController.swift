@@ -11,7 +11,7 @@ import UIKit
 class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     let viewModel: FriendViewModel = FriendViewModel()
-    let network: NetworkService = NetworkService()
+    let network: NetworkServiceForUser = NetworkServiceForUser()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -30,7 +30,8 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! FriendTableViewCell
         let user = viewModel.getUser(at: indexPath)
-        return configureCell(cell: cell, user: user)
+        cell.configure(with: user)
+        return cell
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -45,7 +46,11 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.titleForHeaderInSection(section: section)
     }
-
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
     func loadFriend() {
         viewModel.loadModel { [weak self] result in
             switch result {
@@ -55,18 +60,6 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
                 print(error)
             }
         }
-    }
-    
-    func configureCell(cell: FriendTableViewCell, user: UserModel) -> UITableViewCell {
-        network.getPhotoUser(user: user) { (result) in
-            switch result {
-            case .success(let image):
-                cell.configure(with: user.name, image: image)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        return cell
     }
 }
 

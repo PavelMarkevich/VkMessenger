@@ -20,7 +20,8 @@ class ProfileViewModel {
             let bdate = ((response?.parsedModel as! VKUsersArray).items.firstObject as! VKUser).bdate
             let status = ((response?.parsedModel as! VKUsersArray).items.firstObject as! VKUser).status
             let urlPhoto = ((response?.parsedModel as! VKUsersArray).items.firstObject as! VKUser).photo_200_orig
-            completion(.success(UserModel(name: name, bdate: bdate!, status: status!, urlPhoto: urlPhoto)))
+            let id = ((response?.parsedModel as! VKUsersArray).items.firstObject as! VKUser).id
+            completion(.success(UserModel(name: name, bdate: bdate!, status: status!, urlPhoto: urlPhoto, id: id)))
         }, errorBlock: { error in
             completion(.failure(error ?? NSError()))
         })

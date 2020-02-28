@@ -11,7 +11,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     let viewModel: ProfileViewModel = ProfileViewModel()
-    let network = NetworkService()
+    let network = NetworkServiceForUser()
     let service = VKSDKService()
     
     override func viewDidLoad() {
@@ -54,13 +54,8 @@ class ProfileViewController: UIViewController {
     }
     
     func updatePhoto(userModel: UserModel) {
-        network.getPhotoUser(user: userModel) { result in
-            switch result {
-            case .success(let image):
-                self.photoImage.image = image
-            case .failure(let error):
-                print(error)
-            }
+        network.getPhotoUser(userModel) { result in
+            self.photoImage.image = result
         }
     }
 }

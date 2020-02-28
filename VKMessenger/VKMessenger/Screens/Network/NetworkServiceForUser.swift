@@ -15,9 +15,7 @@ class NetworkServiceForUser {
     var taskStorage: [NSNumber : URLSessionDataTask] =  [:]
     
     func cancelForUser(_ user: UserModel) {
-        if let id = user.id {
-            taskStorage[id]?.cancel()
-        }
+        taskStorage[user.id]?.cancel()
     }
     
     func getPhotoUser(_ user: UserModel, completion: @escaping (UIImage) -> Void) {
@@ -49,9 +47,7 @@ class NetworkServiceForUser {
             }
         }
         task.resume()
-        if let id = user.id {
-            taskStorage[id] = task
-        }
+        taskStorage[user.id] = task
     }
 }
 

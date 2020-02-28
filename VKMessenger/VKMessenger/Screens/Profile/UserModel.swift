@@ -13,5 +13,5 @@ struct UserModel {
     let bdate: String
     let status: String
     let urlPhoto: String?
-    let id: NSNumber?
+    let id: NSNumber
 }

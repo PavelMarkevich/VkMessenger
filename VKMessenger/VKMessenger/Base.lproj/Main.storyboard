@@ -124,12 +124,6 @@
                                     <action selector="logout:" destination="ez5-Wz-w8a" eventType="touchUpInside" id="3am-nq-oxv"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fH4-fa-Mpd">
-                                <rect key="frame" x="0.0" y="87" width="375" height="531"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="hBt-mb-zyL"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="gJM-1p-dJK"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.29912080759999998" green="0.60761001209999999" blue="0.8357392132" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -236,6 +230,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aYD-d6-mwi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2048.8000000000002" y="-201.04947526236884"/>
+        </scene>
+        <!--Friend Profile View Controller-->
+        <scene sceneID="fL4-zJ-bAl">
+            <objects>
+                <viewController storyboardIdentifier="FriendProfileViewController" id="7cB-4L-glJ" customClass="FriendProfileViewController" customModule="VKMessenger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VTx-CD-8i6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EyR-cn-yxD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Back" id="Mrm-O8-IEv">
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="gYn-P9-MvU">
+                                            <connections>
+                                                <action selector="leftBarButton:" destination="7cB-4L-glJ" id="2bv-qI-eTl"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aSN-bu-8JV" userLabel="photoImage">
+                                <rect key="frame" x="16" y="80" width="109" height="82"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Io8-BR-RV2" userLabel="nameLabel">
+                                <rect key="frame" x="133" y="80" width="226" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="226" id="Oux-HO-ocI"/>
+                                    <constraint firstAttribute="height" constant="44" id="tnG-T8-BGA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="EyR-cn-yxD" secondAttribute="trailing" id="5st-nD-VBe"/>
+                            <constraint firstItem="Io8-BR-RV2" firstAttribute="leading" secondItem="aSN-bu-8JV" secondAttribute="trailing" constant="8" symbolic="YES" id="9CG-9N-X0H"/>
+                            <constraint firstItem="EyR-cn-yxD" firstAttribute="leading" secondItem="VTx-CD-8i6" secondAttribute="leading" id="E1r-QM-o1B"/>
+                            <constraint firstItem="Io8-BR-RV2" firstAttribute="top" secondItem="aSN-bu-8JV" secondAttribute="top" id="RuV-hA-wEq"/>
+                            <constraint firstItem="FbE-Bm-0Jc" firstAttribute="bottom" secondItem="aSN-bu-8JV" secondAttribute="bottom" constant="505" id="SB0-KX-2Re"/>
+                            <constraint firstItem="FbE-Bm-0Jc" firstAttribute="bottom" secondItem="Io8-BR-RV2" secondAttribute="bottom" constant="543" id="fyB-9e-iwW"/>
+                            <constraint firstItem="Io8-BR-RV2" firstAttribute="trailing" secondItem="VTx-CD-8i6" secondAttribute="trailingMargin" id="jge-bD-bje"/>
+                            <constraint firstItem="aSN-bu-8JV" firstAttribute="leading" secondItem="VTx-CD-8i6" secondAttribute="leadingMargin" id="lKb-zh-ECC"/>
+                            <constraint firstItem="Io8-BR-RV2" firstAttribute="top" secondItem="EyR-cn-yxD" secondAttribute="bottom" constant="36" id="phy-CO-HGw"/>
+                            <constraint firstItem="Io8-BR-RV2" firstAttribute="leading" secondItem="aSN-bu-8JV" secondAttribute="trailing" constant="8" id="tVy-YU-d4I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FbE-Bm-0Jc"/>
+                    </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="EyR-cn-yxD" id="If3-bW-Nja"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FeO-F4-T6W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3528.8000000000002" y="-201.04947526236884"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XTH-5S-2jP">

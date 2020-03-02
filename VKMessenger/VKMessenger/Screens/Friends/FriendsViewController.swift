@@ -51,6 +51,10 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         searchBar.resignFirstResponder()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FriendProfileViewController")
+    }
+    
     func loadFriend() {
         viewModel.loadModel { [weak self] result in
             switch result {

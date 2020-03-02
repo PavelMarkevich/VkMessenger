@@ -11,6 +11,7 @@ import UIKit
 class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
     let viewModel: FriendViewModel = FriendViewModel()
+    let network: NetworkServiceForUser = NetworkServiceForUser()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -28,8 +29,8 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! FriendTableViewCell
-        let userName = viewModel.getUserName(at: indexPath)
-        cell.configure(with: userName)
+        let user = viewModel.getUser(at: indexPath)
+        cell.configure(with: user)
         return cell
     }
 
@@ -45,7 +46,11 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.titleForHeaderInSection(section: section)
     }
-
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
     func loadFriend() {
         viewModel.loadModel { [weak self] result in
             switch result {

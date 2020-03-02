@@ -14,6 +14,7 @@
 		8465AF2E23E178CD006D4B63 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2D23E178CD006D4B63 /* ProfileViewModel.swift */; };
 		8465AF3023E17EE9006D4B63 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */; };
 		8465AF3223E1A2E3006D4B63 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */; };
+		848BC54924094C7B00A318D2 /* NetworkServiceForUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BC54824094C7B00A318D2 /* NetworkServiceForUser.swift */; };
 		8490F80123F2F188008B6CC4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8490F80023F2F188008B6CC4 /* .gitignore */; };
 		8490F80323F30BFF008B6CC4 /* VKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F80223F30BFF008B6CC4 /* VKDelegate.swift */; };
 		84ED76AC23992F180034C588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76AB23992F180034C588 /* AppDelegate.swift */; };
@@ -34,6 +35,7 @@
 		8465AF2D23E178CD006D4B63 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
 		8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		848BC54824094C7B00A318D2 /* NetworkServiceForUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceForUser.swift; sourceTree = "<group>"; };
 		8490F80023F2F188008B6CC4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8490F80223F30BFF008B6CC4 /* VKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKDelegate.swift; sourceTree = "<group>"; };
 		84ED76A823992F180034C588 /* VKMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,14 @@
 			path = Git;
 			sourceTree = "<group>";
 		};
+		84A3EB512407E9DA00057ADB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				848BC54824094C7B00A318D2 /* NetworkServiceForUser.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		84ED769F23992F180034C588 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +140,7 @@
 		84ED76C1239956CD0034C588 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				84A3EB512407E9DA00057ADB /* Network */,
 				8465AF2523E16130006D4B63 /* Start Screen */,
 				84ED76C5239957350034C588 /* Profile */,
 				84ED76C4239957210034C588 /* Friends */,
@@ -292,6 +303,7 @@
 				84ED76C9239957BB0034C588 /* ProfileViewController.swift in Sources */,
 				8465AF3223E1A2E3006D4B63 /* FriendTableViewCell.swift in Sources */,
 				84ED76B023992F180034C588 /* LoginViewController.swift in Sources */,
+				848BC54924094C7B00A318D2 /* NetworkServiceForUser.swift in Sources */,
 				84ED76AC23992F180034C588 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,12 +10,25 @@ import UIKit
 
 class FriendTableViewCell: UITableViewCell {
 
+    var networkService: NetworkServiceForUser = NetworkServiceForUser()
+    var user: UserModel!
+    
     @IBOutlet weak var photoView: UIImageView!
     
     @IBOutlet weak var nameLabel: UILabel!
     
-    func configure(with nameFriend: String?) {
-        nameLabel.text = nameFriend
-        photoView.image = UIImage(named: "photo")
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        networkService.cancelForUser(user)
+    }
+
+    func configure(with user: UserModel) {
+        self.user = user
+        nameLabel.text = user.name
+        networkService.getPhotoUser(user, completion: { (result) in
+            DispatchQueue.main.async {
+                self.photoView.image = result
+            }
+        })
     }
 }

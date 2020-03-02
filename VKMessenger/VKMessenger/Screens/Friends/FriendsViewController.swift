@@ -52,7 +52,13 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FriendProfileViewController")
+        let user = viewModel.getUser(at: indexPath)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let friendProfileViewController = storyboard.instantiateViewController(withIdentifier: "FriendProfileViewController") as? FriendProfileViewController else {
+            return
+        }
+        friendProfileViewController.user = user
+        AppDelegate.shared.window?.rootViewController = friendProfileViewController
     }
     
     func loadFriend() {

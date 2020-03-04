@@ -14,6 +14,7 @@
 		8465AF2E23E178CD006D4B63 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2D23E178CD006D4B63 /* ProfileViewModel.swift */; };
 		8465AF3023E17EE9006D4B63 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */; };
 		8465AF3223E1A2E3006D4B63 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */; };
+		8466BC5A240FCD6E0074433D /* FavoritesFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8466BC59240FCD6E0074433D /* FavoritesFriendsViewController.swift */; };
 		848BC54924094C7B00A318D2 /* NetworkServiceForUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BC54824094C7B00A318D2 /* NetworkServiceForUser.swift */; };
 		848D9C10240D1C3D0089C3A1 /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9C0F240D1C3D0089C3A1 /* FriendProfileViewController.swift */; };
 		8490F80123F2F188008B6CC4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8490F80023F2F188008B6CC4 /* .gitignore */; };
@@ -36,6 +37,7 @@
 		8465AF2D23E178CD006D4B63 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
 		8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		8466BC59240FCD6E0074433D /* FavoritesFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFriendsViewController.swift; sourceTree = "<group>"; };
 		848BC54824094C7B00A318D2 /* NetworkServiceForUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceForUser.swift; sourceTree = "<group>"; };
 		848D9C0F240D1C3D0089C3A1 /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
 		8490F80023F2F188008B6CC4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 				8465AF2623E16161006D4B63 /* RootViewController.swift */,
 			);
 			path = "Start Screen";
+			sourceTree = "<group>";
+		};
+		8466BC58240FC97C0074433D /* FavoritesFriends */ = {
+			isa = PBXGroup;
+			children = (
+				8466BC59240FCD6E0074433D /* FavoritesFriendsViewController.swift */,
+			);
+			path = FavoritesFriends;
 			sourceTree = "<group>";
 		};
 		848D9C0E240D1BB80089C3A1 /* ProfileFriend */ = {
@@ -150,6 +160,7 @@
 		84ED76C1239956CD0034C588 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8466BC58240FC97C0074433D /* FavoritesFriends */,
 				84A3EB512407E9DA00057ADB /* Network */,
 				8465AF2523E16130006D4B63 /* Start Screen */,
 				84ED76C5239957350034C588 /* Profile */,
@@ -310,6 +321,7 @@
 				848D9C10240D1C3D0089C3A1 /* FriendProfileViewController.swift in Sources */,
 				84ED76C7239957A50034C588 /* FriendsViewController.swift in Sources */,
 				8465AF2C23E17876006D4B63 /* UserModel.swift in Sources */,
+				8466BC5A240FCD6E0074433D /* FavoritesFriendsViewController.swift in Sources */,
 				8465AF2E23E178CD006D4B63 /* ProfileViewModel.swift in Sources */,
 				8465AF2723E16161006D4B63 /* RootViewController.swift in Sources */,
 				84ED76C9239957BB0034C588 /* ProfileViewController.swift in Sources */,

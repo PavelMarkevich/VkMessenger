@@ -51,6 +51,10 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         searchBar.resignFirstResponder()
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = viewModel.getUser(at: indexPath)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

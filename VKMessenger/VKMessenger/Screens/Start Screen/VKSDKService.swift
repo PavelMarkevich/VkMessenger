@@ -34,11 +34,11 @@ class VKSDKService {
     }
     
     func getUser() -> VKRequest? {
-        return VKApi.users()?.get(["fields" : "nickname, photo_200_orig, home_town, online, education, status, university, bdate, id"])
+        return VKApi.users()?.get(["fields" : "nickname, screen_name, sex, bdate, city, country, timezone, photo, photo_medium, photo_big, photo_200_orig, has_mobile, contacts, education, online, counters, relation, last_seen, activity, can_write_private_message, can_see_all_posts, can_post, universities"])
     }
-    
+
     func getFriends() -> VKRequest? {
-        return VKApi.friends()?.get(["fields" : "nickname, photo_200_orig, status, online, id"])
+        return VKApi.friends()?.get(["fields" : "nickname, domain, sex, bdate, city, country, timezone, photo_50, photo_100, photo_200_orig, has_mobile, contacts, education, online, relation, last_seen, status, can_write_private_message, can_see_all_posts, can_post, universities"])
     }
     
     func login(from controller: UIViewController, completion: @escaping (Bool) -> Void) {

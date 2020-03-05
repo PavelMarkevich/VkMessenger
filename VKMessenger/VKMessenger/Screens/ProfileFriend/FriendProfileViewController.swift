@@ -24,11 +24,7 @@ class FriendProfileViewController: UIViewController {
         super.viewDidLoad()
         update()
     }
-    
-    @IBAction func leftBarButton(_ sender: Any) {
-        AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
-    }
-    
+
     func update() {
         nameLabel.text = user.name
         bdateLabel.text = user.bdate

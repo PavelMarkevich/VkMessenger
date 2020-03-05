@@ -42,7 +42,10 @@ class VKSDKService {
     }
     
     func login(from controller: UIViewController, completion: @escaping (Bool) -> Void) {
-        delegate = VKDelegate(controller: controller, completion: completion)
+        delegate = VKDelegate(controller: controller, completion: { [weak self] in
+            self?.delegate = nil
+            completion($0)
+        })
         sdkInstance?.register(delegate)
         sdkInstance?.uiDelegate = delegate
         VKSdk.authorize(SCOPE)

@@ -67,9 +67,10 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func loadFriend() {
         viewModel.loadModel { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success:
-                self?.tableView.reloadData()
+                self.tableView.reloadData()
             case .failure(let error):
                 print(error)
             }

@@ -25,9 +25,9 @@ class FriendTableViewCell: UITableViewCell {
     func configure(with user: UserModel) {
         self.user = user
         nameLabel.text = user.name
-        networkService.getPhotoUser(user, completion: { (result) in
+        networkService.getPhotoUser(user, completion: { [weak self] result in
             DispatchQueue.main.async {
-                self.photoView.image = result
+                self?.photoView.image = result
             }
         })
     }

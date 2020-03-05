@@ -51,6 +51,21 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         searchBar.resignFirstResponder()
     }
     
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        view.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let user = viewModel.getUser(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let friendProfileViewController = storyboard.instantiateViewController(withIdentifier: "FriendProfileViewController") as? FriendProfileViewController else {
+            return
+        }
+        friendProfileViewController.user = user
+        navigationController?.pushViewController(friendProfileViewController, animated: false)
+    }
+    
     func loadFriend() {
         viewModel.loadModel { [weak self] result in
             switch result {

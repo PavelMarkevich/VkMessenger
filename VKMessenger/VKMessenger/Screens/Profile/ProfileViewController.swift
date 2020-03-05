@@ -54,8 +54,8 @@ class ProfileViewController: UIViewController {
     }
     
     func updatePhoto(userModel: UserModel) {
-        network.getPhotoUser(userModel) { result in
-            self.photoImage.image = result
+        network.getPhotoUser(userModel) { [weak self] result in
+            self?.photoImage.image = result
         }
     }
 }

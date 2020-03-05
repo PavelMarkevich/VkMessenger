@@ -15,6 +15,7 @@
 		8465AF3023E17EE9006D4B63 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */; };
 		8465AF3223E1A2E3006D4B63 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */; };
 		848BC54924094C7B00A318D2 /* NetworkServiceForUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BC54824094C7B00A318D2 /* NetworkServiceForUser.swift */; };
+		848D9C10240D1C3D0089C3A1 /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9C0F240D1C3D0089C3A1 /* FriendProfileViewController.swift */; };
 		8490F80123F2F188008B6CC4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8490F80023F2F188008B6CC4 /* .gitignore */; };
 		8490F80323F30BFF008B6CC4 /* VKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F80223F30BFF008B6CC4 /* VKDelegate.swift */; };
 		84ED76AC23992F180034C588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76AB23992F180034C588 /* AppDelegate.swift */; };
@@ -36,6 +37,7 @@
 		8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
 		8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
 		848BC54824094C7B00A318D2 /* NetworkServiceForUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceForUser.swift; sourceTree = "<group>"; };
+		848D9C0F240D1C3D0089C3A1 /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
 		8490F80023F2F188008B6CC4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8490F80223F30BFF008B6CC4 /* VKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKDelegate.swift; sourceTree = "<group>"; };
 		84ED76A823992F180034C588 /* VKMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,14 @@
 				8465AF2623E16161006D4B63 /* RootViewController.swift */,
 			);
 			path = "Start Screen";
+			sourceTree = "<group>";
+		};
+		848D9C0E240D1BB80089C3A1 /* ProfileFriend */ = {
+			isa = PBXGroup;
+			children = (
+				848D9C0F240D1C3D0089C3A1 /* FriendProfileViewController.swift */,
+			);
+			path = ProfileFriend;
 			sourceTree = "<group>";
 		};
 		8490F7FF23F2F12C008B6CC4 /* Git */ = {
@@ -143,6 +153,7 @@
 				84A3EB512407E9DA00057ADB /* Network */,
 				8465AF2523E16130006D4B63 /* Start Screen */,
 				84ED76C5239957350034C588 /* Profile */,
+				848D9C0E240D1BB80089C3A1 /* ProfileFriend */,
 				84ED76C4239957210034C588 /* Friends */,
 				84ED76C2239956DD0034C588 /* Login */,
 			);
@@ -296,6 +307,7 @@
 				8490F80323F30BFF008B6CC4 /* VKDelegate.swift in Sources */,
 				8465AF3023E17EE9006D4B63 /* FriendViewModel.swift in Sources */,
 				8465AF2A23E16235006D4B63 /* VKSDKService.swift in Sources */,
+				848D9C10240D1C3D0089C3A1 /* FriendProfileViewController.swift in Sources */,
 				84ED76C7239957A50034C588 /* FriendsViewController.swift in Sources */,
 				8465AF2C23E17876006D4B63 /* UserModel.swift in Sources */,
 				8465AF2E23E178CD006D4B63 /* ProfileViewModel.swift in Sources */,

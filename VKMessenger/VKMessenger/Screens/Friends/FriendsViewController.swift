@@ -57,12 +57,13 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = viewModel.getUser(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let friendProfileViewController = storyboard.instantiateViewController(withIdentifier: "FriendProfileViewController") as? FriendProfileViewController else {
             return
         }
         friendProfileViewController.user = user
-        AppDelegate.shared.window?.rootViewController = friendProfileViewController
+        navigationController?.pushViewController(friendProfileViewController, animated: false)
     }
     
     func loadFriend() {

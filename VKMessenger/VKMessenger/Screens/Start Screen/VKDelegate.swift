@@ -11,7 +11,7 @@ import VK_ios_sdk
 
 class VKDelegate: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     
-    let contoller: UIViewController
+    weak var contoller: UIViewController?
     let completion: (Bool) -> Void
     
     init(controller: UIViewController, completion: @escaping (Bool) -> Void) {
@@ -32,7 +32,7 @@ class VKDelegate: NSObject, VKSdkDelegate, VKSdkUIDelegate {
     }
     
     func vkSdkShouldPresent(_ controller: UIViewController!) {
-        self.contoller.present(controller, animated: true, completion: nil)
+        self.contoller?.present(controller, animated: true, completion: nil)
     }
     
     func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {

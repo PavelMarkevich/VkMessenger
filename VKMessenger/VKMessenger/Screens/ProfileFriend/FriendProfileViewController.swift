@@ -13,8 +13,6 @@ class FriendProfileViewController: UIViewController {
     let network = NetworkServiceForUser()
     var user: UserModel!
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
-    
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var bdateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -25,17 +23,13 @@ class FriendProfileViewController: UIViewController {
         update()
     }
     
-    @IBAction func leftBarButton(_ sender: Any) {
-        AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
-    }
-    
     func update() {
         nameLabel.text = user.name
         bdateLabel.text = user.bdate
         statusLabel.text = user.status
-        navigationBar.topItem?.title = "id" + "\(user.id)"
-        network.getPhotoUser(user) { result in
-            self.photoImage.image = result
+        navigationItem.title = "id" + "\(user.id)"
+        network.getPhotoUser(user) { [weak self] result in
+            self?.photoImage.image = result
         }
     }
     

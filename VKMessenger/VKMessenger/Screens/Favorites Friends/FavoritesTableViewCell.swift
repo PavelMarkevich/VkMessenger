@@ -11,5 +11,9 @@ import UIKit
 class FavoritesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var photoImage: UIImageView! 
+    @IBOutlet weak var photoImage: UIImageView!
+    
+    func configure(name: String) {
+        nameLabel.text = name
+    }
 }

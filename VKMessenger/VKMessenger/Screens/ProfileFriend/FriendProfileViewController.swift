@@ -11,6 +11,7 @@ import UIKit
 class FriendProfileViewController: UIViewController {
     
     let network = NetworkServiceForUser()
+    let viewModel = FriendProfileViewModel()
     var user: UserModel!
     
     @IBOutlet weak var statusLabel: UILabel!
@@ -18,6 +19,13 @@ class FriendProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
     
+    @IBAction func add(_ sender: Any) {
+        viewModel.save(user)
+    }
+    
+    @IBAction func deleteFavorite(_ sender: Any) {
+        viewModel.delete(user)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         update()

@@ -13,12 +13,9 @@ import CoreData
 class FavoritesFriendsViewModel {
     
     var user: [NSManagedObject] = []
+    let managedContext = AppDelegate.shared.persistentContainer.viewContext
     
     func fearchRequest() {
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "User")
         do {
           user = try managedContext.fetch(fetchRequest)

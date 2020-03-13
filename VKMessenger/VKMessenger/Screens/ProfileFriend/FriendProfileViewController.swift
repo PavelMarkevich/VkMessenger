@@ -18,17 +18,13 @@ class FriendProfileViewController: UIViewController {
     @IBOutlet weak var bdateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
+    @IBOutlet weak var addOrRemove: UIButton!
     
-    @IBAction func add(_ sender: Any) {
-        viewModel.save(user)
-    }
-    
-    @IBAction func deleteFavorite(_ sender: Any) {
-        viewModel.delete(user)
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         update()
+        viewModel.stateChange(sender: addOrRemove, user: user)
+        viewModel.getUser(user: user)
     }
     
     func update() {

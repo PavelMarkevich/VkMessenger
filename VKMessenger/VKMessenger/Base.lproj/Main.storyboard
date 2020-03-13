@@ -368,21 +368,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmH-m1-OIZ">
-                                <rect key="frame" x="321" y="61" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIK-Ne-GWi" userLabel="Favorite">
+                                <rect key="frame" x="310" y="61" width="49" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="add"/>
-                                <connections>
-                                    <action selector="add:" destination="7cB-4L-glJ" eventType="touchUpInside" id="Nud-wC-Uos"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ow-wg-hD7">
-                                <rect key="frame" x="313" y="99" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Delete"/>
-                                <connections>
-                                    <action selector="deleteFavorite:" destination="7cB-4L-glJ" eventType="touchUpInside" id="ZLW-9h-pkT"/>
-                                </connections>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="disabled" title="Delete"/>
+                                <state key="selected" title="Delete"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29912080759999998" green="0.60761001209999999" blue="0.8357392132" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -390,6 +385,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RO3-Sm-cmb"/>
                     <connections>
+                        <outlet property="addOrRemove" destination="CIK-Ne-GWi" id="khI-NN-EgO"/>
                         <outlet property="bdateLabel" destination="SWc-hb-Uta" id="EDt-SZ-NKH"/>
                         <outlet property="nameLabel" destination="Io8-BR-RV2" id="8SR-cy-LpG"/>
                         <outlet property="photoImage" destination="aSN-bu-8JV" id="zpD-0C-YlW"/>
@@ -398,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeO-F4-T6W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3834" y="-217"/>
+            <point key="canvasLocation" x="3832.8000000000002" y="-217.24137931034485"/>
         </scene>
         <!--Profile Navigation Controller-->
         <scene sceneID="Gyk-qA-Fyj">

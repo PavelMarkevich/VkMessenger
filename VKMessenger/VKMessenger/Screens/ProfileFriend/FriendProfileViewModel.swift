@@ -15,7 +15,7 @@ class FriendProfileViewModel {
     let managedContext = AppDelegate.shared.persistentContainer.viewContext
     var user: UserModel!
     
-    func save(_ user: UserModel) {
+    func save() {
         let entity = NSEntityDescription.entity(forEntityName: "User", in: managedContext)!
         let person = NSManagedObject(entity: entity, insertInto: managedContext)
         person.setValue(user.name, forKeyPath: "name")
@@ -27,7 +27,7 @@ class FriendProfileViewModel {
         }
     }
     
-    func delete(_ user: UserModel) {
+    func delete() {
         let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         deleteFetch.predicate = NSPredicate(format: "id = %@", user.id)
         do {
@@ -46,50 +46,19 @@ class FriendProfileViewModel {
         }
     }
     
-    func chekStateButtton(_ user: UserModel) -> Bool {
+    func chekStateButtton() -> Bool {
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetch.predicate = NSPredicate(format: "id = %@", user.id)
         do {
             let test = try managedContext.fetch(fetch)
             if test.isEmpty {
-                return true
-            } else {
                 return false
+            } else {
+                return true
             }
         } catch {
             print(error)
         }
         return true
-    }
-    
-    func getUser(user: UserModel) {
-        self.user = user
-    }
-    
-    func stateChange(sender: UIButton, user: UserModel) {
-        let state = chekStateButtton(user)
-        if state {
-            sender.isSelected = !sender.isSelected
-            sender.addTarget(self, action: #selector(saved(_:)), for: .touchUpInside)
-        } else {
-            sender.isSelected = !sender.isSelected
-            sender.addTarget(self, action: #selector(deleted(_:)), for: .touchUpInside)
-        }
-//        let state = viewModel.chekStateButtton(user)
-//        if state {
-//            viewModel.save(user)
-//            sender.isSelected = !sender.isSelected
-//        } else {
-//            viewModel.delete(user)
-//            sender.isSelected = !sender.isSelected
-//        }
-    }
-    
-    @objc func saved(_ sender: UIButton) {
-        save(user)
-    }
-    
-    @objc func deleted(_ sender: UIButton) {
-        delete(user)
     }
 }

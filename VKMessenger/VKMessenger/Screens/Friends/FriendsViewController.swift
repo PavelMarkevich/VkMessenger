@@ -62,7 +62,9 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         guard let friendProfileViewController = storyboard.instantiateViewController(withIdentifier: "FriendProfileViewController") as? FriendProfileViewController else {
             return
         }
-        friendProfileViewController.user = user
+        let friendProfileViewModel = FriendProfileViewModel()
+        friendProfileViewModel.user = user
+        friendProfileViewController.viewModel = friendProfileViewModel
         navigationController?.pushViewController(friendProfileViewController, animated: false)
     }
     

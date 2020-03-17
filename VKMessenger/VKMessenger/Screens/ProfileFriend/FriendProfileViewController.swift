@@ -11,30 +11,42 @@ import UIKit
 class FriendProfileViewController: UIViewController {
     
     let network = NetworkServiceForUser()
-    let viewModel = FriendProfileViewModel()
-    var user: UserModel!
+    var viewModel: FriendProfileViewModel!
     
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var bdateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
-    @IBOutlet weak var addOrRemove: UIButton!
+    @IBOutlet weak var favoritesFriends: UIButton!
+    
+    @IBAction func addOrRemove(_ sender: UIButton) {
+        let state = viewModel.chekStateButtton()
+        if state {
+            viewModel.delete()
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+            viewModel.save()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         update()
-        viewModel.stateChange(sender: addOrRemove, user: user)
-        viewModel.getUser(user: user)
+        let state = viewModel.chekStateButtton()
+        if state {
+            favoritesFriends.isSelected = true
+        }
     }
     
     func update() {
-        nameLabel.text = user.name
-        bdateLabel.text = user.bdate
-        statusLabel.text = user.status
-        navigationItem.title = "id" + "\(user.id)"
+        let user = viewModel.user
+        nameLabel.text = user?.name
+        bdateLabel.text = user?.bdate
+        statusLabel.text = user?.status
+        navigationItem.title = "id" + "\((user?.id)!)"
         network.getPhotoUser(user) { [weak self] result in
             self?.photoImage.image = result
         }
     }
-    
 }

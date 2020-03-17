@@ -30,6 +30,8 @@
 		84ED76B823992F190034C588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ED76B623992F190034C588 /* LaunchScreen.storyboard */; };
 		84ED76C7239957A50034C588 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76C6239957A50034C588 /* FriendsViewController.swift */; };
 		84ED76C9239957BB0034C588 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76C8239957BB0034C588 /* ProfileViewController.swift */; };
+		84F1FA772421167B004B1759 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1FA762421167B004B1759 /* User+CoreDataProperties.swift */; };
+		84F1FA782421167B004B1759 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1FA752421167B004B1759 /* User+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		84ED76B923992F190034C588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84ED76C6239957A50034C588 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		84ED76C8239957BB0034C588 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		84F1FA752421167B004B1759 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "/Users/admin/Desktop/VK/VKMessenger/VKMessenger/User+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		84F1FA762421167B004B1759 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "/Users/admin/Desktop/VK/VKMessenger/VKMessenger/User+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		B4690FA0B73F5136900591F5 /* Pods-VKMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKMessenger.release.xcconfig"; path = "Target Support Files/Pods-VKMessenger/Pods-VKMessenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +162,8 @@
 		84ED76AA23992F180034C588 /* VKMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				84F1FA752421167B004B1759 /* User+CoreDataClass.swift */,
+				84F1FA762421167B004B1759 /* User+CoreDataProperties.swift */,
 				84ED76C1239956CD0034C588 /* Screens */,
 				84ED76AB23992F180034C588 /* AppDelegate.swift */,
 				84ED76B123992F180034C588 /* Main.storyboard */,
@@ -337,9 +343,11 @@
 				84883896241156D500F4B128 /* FavoritesFriendsViewController.swift in Sources */,
 				8465AF2E23E178CD006D4B63 /* ProfileViewModel.swift in Sources */,
 				8465AF2723E16161006D4B63 /* RootViewController.swift in Sources */,
+				84F1FA772421167B004B1759 /* User+CoreDataProperties.swift in Sources */,
 				844F95CA241937B500C146D2 /* FavoritesFriendsViewModel.swift in Sources */,
 				84ED76C9239957BB0034C588 /* ProfileViewController.swift in Sources */,
 				844F95CC2419394400C146D2 /* FriendProfileViewModel.swift in Sources */,
+				84F1FA782421167B004B1759 /* User+CoreDataClass.swift in Sources */,
 				84883898241158F300F4B128 /* FavoritesTableViewCell.swift in Sources */,
 				8465AF3223E1A2E3006D4B63 /* FriendTableViewCell.swift in Sources */,
 				84ED76B023992F180034C588 /* LoginViewController.swift in Sources */,

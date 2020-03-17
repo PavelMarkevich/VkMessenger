@@ -378,6 +378,9 @@
                                 </state>
                                 <state key="disabled" title="Delete"/>
                                 <state key="selected" title="Delete"/>
+                                <connections>
+                                    <action selector="addOrRemove:" destination="7cB-4L-glJ" eventType="touchUpInside" id="or4-V4-VUI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.29912080759999998" green="0.60761001209999999" blue="0.8357392132" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -385,8 +388,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="RO3-Sm-cmb"/>
                     <connections>
-                        <outlet property="addOrRemove" destination="CIK-Ne-GWi" id="khI-NN-EgO"/>
                         <outlet property="bdateLabel" destination="SWc-hb-Uta" id="EDt-SZ-NKH"/>
+                        <outlet property="favoritesFriends" destination="CIK-Ne-GWi" id="2Un-3j-gUY"/>
                         <outlet property="nameLabel" destination="Io8-BR-RV2" id="8SR-cy-LpG"/>
                         <outlet property="photoImage" destination="aSN-bu-8JV" id="zpD-0C-YlW"/>
                         <outlet property="statusLabel" destination="c3b-fY-lU6" id="tCk-4J-ha4"/>

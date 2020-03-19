@@ -23,6 +23,7 @@
 		848D9C10240D1C3D0089C3A1 /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9C0F240D1C3D0089C3A1 /* FriendProfileViewController.swift */; };
 		8490F80123F2F188008B6CC4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8490F80023F2F188008B6CC4 /* .gitignore */; };
 		8490F80323F30BFF008B6CC4 /* VKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8490F80223F30BFF008B6CC4 /* VKDelegate.swift */; };
+		849A3789242386B40002F397 /* FavoriteFriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A3788242386B40002F397 /* FavoriteFriendProfileViewController.swift */; };
 		84ED76AC23992F180034C588 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76AB23992F180034C588 /* AppDelegate.swift */; };
 		84ED76B023992F180034C588 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76AF23992F180034C588 /* LoginViewController.swift */; };
 		84ED76B323992F180034C588 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ED76B123992F180034C588 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		848D9C0F240D1C3D0089C3A1 /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
 		8490F80023F2F188008B6CC4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8490F80223F30BFF008B6CC4 /* VKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKDelegate.swift; sourceTree = "<group>"; };
+		849A3788242386B40002F397 /* FavoriteFriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFriendProfileViewController.swift; sourceTree = "<group>"; };
 		84ED76A823992F180034C588 /* VKMessenger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKMessenger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ED76AB23992F180034C588 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84ED76AF23992F180034C588 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,14 @@
 			path = Git;
 			sourceTree = "<group>";
 		};
+		849A37872423861A0002F397 /* Favorite Friend Profile */ = {
+			isa = PBXGroup;
+			children = (
+				849A3788242386B40002F397 /* FavoriteFriendProfileViewController.swift */,
+			);
+			path = "Favorite Friend Profile";
+			sourceTree = "<group>";
+		};
 		84A3EB512407E9DA00057ADB /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +188,7 @@
 		84ED76C1239956CD0034C588 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				849A37872423861A0002F397 /* Favorite Friend Profile */,
 				84883894241156B000F4B128 /* Favorites Friends */,
 				84A3EB512407E9DA00057ADB /* Network */,
 				8465AF2523E16130006D4B63 /* Start Screen */,
@@ -335,6 +346,7 @@
 			files = (
 				8490F80323F30BFF008B6CC4 /* VKDelegate.swift in Sources */,
 				8465AF3023E17EE9006D4B63 /* FriendViewModel.swift in Sources */,
+				849A3789242386B40002F397 /* FavoriteFriendProfileViewController.swift in Sources */,
 				8465AF2A23E16235006D4B63 /* VKSDKService.swift in Sources */,
 				848D9C10240D1C3D0089C3A1 /* FriendProfileViewController.swift in Sources */,
 				84ED76C7239957A50034C588 /* FriendsViewController.swift in Sources */,

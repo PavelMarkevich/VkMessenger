@@ -13,6 +13,7 @@ import CoreData
 class FriendProfileViewModel {
     
     let managedContext = AppDelegate.shared.persistentContainer.viewContext
+    let network = NetworkServiceForUser()
     var user: UserModel!
     
     func save() {
@@ -20,11 +21,17 @@ class FriendProfileViewModel {
         let person = NSManagedObject(entity: entity, insertInto: managedContext)
         person.setValue(user.name, forKeyPath: "name")
         person.setValue(user.id, forKey: "id")
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
+        person.setValue(user.bdate, forKey: "bdate")
+        person.setValue(user.status, forKey: "status")
+        network.getPhotoUser(user, completion: { image in
+            let data = image.pngData()
+            person.setValue(data, forKey: "photo")
+            do {
+                try self.managedContext.save()
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
+        })
     }
     
     func delete() {
@@ -60,5 +67,12 @@ class FriendProfileViewModel {
             print(error)
         }
         return true
+    }
+    
+    func changeStateButton(_ sender: UIButton) {
+        let state = chekStateButtton()
+        if state {
+            sender.isSelected = true
+        }
     }
 }

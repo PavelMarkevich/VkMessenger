@@ -12,25 +12,72 @@ import CoreData
 
 class FavoritesFriendsViewModel {
     
-    var user: [NSManagedObject] = []
+    var usersGroups = [Group]()
+    var filterUsersGroups = [Group]()
+    
     let managedContext = AppDelegate.shared.persistentContainer.viewContext
     
     func fearchRequest() {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "User")
         do {
-          user = try managedContext.fetch(fetchRequest)
+            let user = try managedContext.fetch(fetchRequest)
+            grouping(userModel: user)
         } catch let error as NSError {
           print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
     
-    func getNumberOfSection() -> Int {
-        return user.count
+    func grouping(userModel: [NSManagedObject]) {
+        usersGroups = [Group]()
+        var dictionary = [String: [UserModel]]()
+        var users = [UserModel]()
+        for user in userModel {
+            let name = user.value(forKey: "name") as! String
+            let bdate = user.value(forKey: "bdate") as? String
+            let status = user.value(forKey: "status") as? String
+            let id = user.value(forKey: "id") as! NSNumber
+            let data = user.value(forKey: "photo") as? Data
+            users.append(UserModel(name: name, bdate: bdate, status: status, urlPhoto: nil, id: id, data: data))
+        }
+        for user in users {
+            let userKey = String(user.name.prefix(1))
+            if var userValues = dictionary[userKey] {
+                userValues.append(user)
+                dictionary[userKey] = userValues
+            } else {
+                dictionary[userKey] = [user]
+            }
+        }
+        for item in dictionary {
+            self.usersGroups.append(Group(title: item.key, usersModels: item.value))
+        }
+        usersGroups = usersGroups.sorted(by: { $0.title < $1.title })
+        filterUsersGroups = usersGroups
     }
     
-    func getUserName(for indexPath: IndexPath) -> String {
-        let user = self.user[indexPath.row]
-        let name = user.value(forKey: "name") as! String
-        return name
+    func countOfSections() -> Int {
+        return filterUsersGroups.count
+    }
+    
+    func numberOfRowsInSection(section: Int) -> Int {
+        return filterUsersGroups[section].usersModels.count
+    }
+    
+    func titleForHeaderInSection(section: Int) -> String? {
+        return filterUsersGroups[section].title
+    }
+    
+    func getUser(at indexPath: IndexPath) -> UserModel {
+        return filterUsersGroups[indexPath.section].usersModels[indexPath.row]
+    }
+    
+    func searchBar(textDidChange searchText: String) {
+        filterUsersGroups = usersGroups
+        if !searchText.isEmpty {
+            for i in 0..<usersGroups.count{
+                filterUsersGroups[i].usersModels = usersGroups[i].usersModels.filter({ $0.name.range(of: searchText, options: .caseInsensitive) != nil })
+                filterUsersGroups[i].title = ""
+            }
+        }
     }
 }

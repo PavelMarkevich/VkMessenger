@@ -28,7 +28,7 @@ class FriendViewModel {
             var arrayUser = [UserModel]()
             array.append((response?.parsedModel as! VKUsersArray))
             for i in 0..<array[0].count {
-                arrayUser.append(UserModel(name: array[0][i].first_name + " " + array[0][i].last_name, bdate: array[0][i].bdate, status: array[0][i].status, urlPhoto: array[0][i].photo_200_orig, id: array[0][i].id))
+                arrayUser.append(UserModel(name: array[0][i].first_name + " " + array[0][i].last_name, bdate: array[0][i].bdate, status: array[0][i].status, urlPhoto: array[0][i].photo_200_orig, id: array[0][i].id, data: nil))
             }
             self.grouping(userModel: arrayUser)
             completion(.success(()))

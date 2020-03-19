@@ -33,10 +33,7 @@ class FriendProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         update()
-        let state = viewModel.chekStateButtton()
-        if state {
-            favoritesFriends.isSelected = true
-        }
+        viewModel.changeStateButton(favoritesFriends)
     }
     
     func update() {

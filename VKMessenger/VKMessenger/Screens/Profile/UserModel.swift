@@ -14,4 +14,5 @@ struct UserModel {
     let status: String?
     let urlPhoto: String?
     let id: NSNumber
+    let data: Data?
 }

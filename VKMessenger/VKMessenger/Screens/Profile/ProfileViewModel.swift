@@ -24,7 +24,7 @@ class ProfileViewModel {
             guard let idUser = id else {
                 return
             }
-            completion(.success(UserModel(name: name, bdate: bdate, status: status, urlPhoto: urlPhoto, id: idUser)))
+            completion(.success(UserModel(name: name, bdate: bdate, status: status, urlPhoto: urlPhoto, id: idUser, data: nil)))
         }, errorBlock: { error in
             completion(.failure(error ?? NSError()))
         })

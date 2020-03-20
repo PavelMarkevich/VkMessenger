@@ -49,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-login" translatesAutoresizingMaskIntoConstraints="NO" id="1wL-Tc-rLZ">
-                                <rect key="frame" x="34" y="112" width="307" height="75"/>
+                                <rect key="frame" x="16" y="112" width="343" height="157"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pTB-Un-NVD">
                                 <rect key="frame" x="98" y="472" width="179" height="75"/>
@@ -69,10 +69,11 @@
                             <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="1wL-Tc-rLZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="Epp-rB-Y8F"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1wL-Tc-rLZ" secondAttribute="trailing" constant="34" id="PLu-VO-N0q"/>
-                            <constraint firstItem="1wL-Tc-rLZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="112" id="pYx-nb-XF0"/>
-                            <constraint firstItem="pTB-Un-NVD" firstAttribute="top" secondItem="1wL-Tc-rLZ" secondAttribute="bottom" constant="285" id="peB-f5-Xtz"/>
+                            <constraint firstItem="1wL-Tc-rLZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="0Ob-yC-kwQ"/>
+                            <constraint firstItem="1wL-Tc-rLZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="112" id="53o-B2-OJ4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1wL-Tc-rLZ" secondAttribute="bottom" constant="398" id="6bW-pa-zwo"/>
+                            <constraint firstItem="pTB-Un-NVD" firstAttribute="top" secondItem="1wL-Tc-rLZ" secondAttribute="bottom" constant="203" id="LaF-4f-USC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1wL-Tc-rLZ" secondAttribute="trailing" constant="16" id="mHR-BQ-c41"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -80,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="139"/>
+            <point key="canvasLocation" x="-2.3999999999999999" y="138.98050974512745"/>
         </scene>
         <!--Favorites Friends Navigator Controller-->
         <scene sceneID="6tw-7d-wot">
@@ -127,8 +128,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXT-kv-Eyj">
+                                                    <rect key="frame" x="107" y="-1" width="268" height="47"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZs-YJ-2nP">
-                                                    <rect key="frame" x="15" y="0.0" width="80" height="51"/>
+                                                    <rect key="frame" x="15" y="0.0" width="61" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -136,13 +144,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UXT-kv-Eyj">
-                                                    <rect key="frame" x="111" y="1" width="264" height="42"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.29912080759999998" green="0.60761001209999999" blue="0.8357392132" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </tableViewCellContentView>

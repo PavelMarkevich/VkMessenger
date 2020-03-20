@@ -52,7 +52,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        view.tintColor = .darkGray
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

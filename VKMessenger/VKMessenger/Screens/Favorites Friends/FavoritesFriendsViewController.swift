@@ -46,18 +46,20 @@ class FavoritesFriendsViewController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.tintColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        view.tintColor = .darkGray
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = viewModel.getUser(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let favoriteFriendProfileViewController = storyboard.instantiateViewController(withIdentifier: "FavoriteFriendProfileViewController") as? FavoriteFriendProfileViewController else {
+        guard let friendProfileViewController = storyboard.instantiateViewController(withIdentifier: "FriendProfileViewController") as? FriendProfileViewController else {
             return
         }
-        favoriteFriendProfileViewController.user = user
-        navigationController?.pushViewController(favoriteFriendProfileViewController, animated: false)
+        let friendProfileViewModel = FriendProfileViewModel()
+        friendProfileViewModel.user = user
+        friendProfileViewController.viewModel = friendProfileViewModel
+        navigationController?.pushViewController(friendProfileViewController, animated: false)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

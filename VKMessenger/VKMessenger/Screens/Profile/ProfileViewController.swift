@@ -16,9 +16,6 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        photoImage.layer.cornerRadius = 30
-        photoImage.contentMode = .scaleToFill
-        photoImage.layer.masksToBounds = true
         loadProfile()
     }
     

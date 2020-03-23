@@ -27,7 +27,7 @@ class FriendProfileViewController: UIViewController {
         } else {
             sender.isSelected = true
             viewModel.save()
-        }
+        }  
     }
     
     override func viewDidLoad() {
@@ -42,8 +42,13 @@ class FriendProfileViewController: UIViewController {
         bdateLabel.text = user?.bdate
         statusLabel.text = user?.status
         navigationItem.title = "id" + "\((user?.id)!)"
-        network.getPhotoUser(user) { [weak self] result in
-            self?.photoImage.image = result
+        let controller = navigationController?.viewControllers[0]
+        if controller is FriendsViewController {
+            network.getPhotoUser(user) { [weak self] result in
+                self?.photoImage.image = result
+            }
+        } else {
+            photoImage.image = UIImage(data: (user?.data)!)
         }
     }
 }

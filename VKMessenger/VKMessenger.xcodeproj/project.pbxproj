@@ -11,6 +11,7 @@
 		84492377241A6127000BE4DF /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84492375241A6127000BE4DF /* User.xcdatamodeld */; };
 		844F95CA241937B500C146D2 /* FavoritesFriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F95C9241937B500C146D2 /* FavoritesFriendsViewModel.swift */; };
 		844F95CC2419394400C146D2 /* FriendProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F95CB2419394400C146D2 /* FriendProfileViewModel.swift */; };
+		84573BD8243627BA00A786CA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84573BD7243627B900A786CA /* R.generated.swift */; };
 		8465AF2723E16161006D4B63 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2623E16161006D4B63 /* RootViewController.swift */; };
 		8465AF2A23E16235006D4B63 /* VKSDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2923E16235006D4B63 /* VKSDKService.swift */; };
 		8465AF2C23E17876006D4B63 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2B23E17876006D4B63 /* UserModel.swift */; };
@@ -40,6 +41,7 @@
 		84492376241A6127000BE4DF /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		844F95C9241937B500C146D2 /* FavoritesFriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFriendsViewModel.swift; sourceTree = "<group>"; };
 		844F95CB2419394400C146D2 /* FriendProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewModel.swift; sourceTree = "<group>"; };
+		84573BD7243627B900A786CA /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		8465AF2623E16161006D4B63 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		8465AF2923E16235006D4B63 /* VKSDKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKSDKService.swift; sourceTree = "<group>"; };
 		8465AF2B23E17876006D4B63 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				84F1FA762421167B004B1759 /* User+CoreDataProperties.swift */,
 				84ED76C1239956CD0034C588 /* Screens */,
 				84ED76AB23992F180034C588 /* AppDelegate.swift */,
+				84573BD7243627B900A786CA /* R.generated.swift */,
 				84ED76B123992F180034C588 /* Main.storyboard */,
 				84ED76B423992F190034C588 /* Assets.xcassets */,
 				84ED76B623992F190034C588 /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 			buildConfigurationList = 84ED76BC23992F190034C588 /* Build configuration list for PBXNativeTarget "VKMessenger" */;
 			buildPhases = (
 				18453F19B075F310A6D0E7BE /* [CP] Check Pods Manifest.lock */,
+				84573BD6243626BB00A786CA /* ShellScript */,
 				84ED76A423992F180034C588 /* Sources */,
 				84ED76A523992F180034C588 /* Frameworks */,
 				84ED76A623992F180034C588 /* Resources */,
@@ -309,6 +313,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		84573BD6243626BB00A786CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		ECCB8F8D53A05C63BE07E730 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,6 +364,7 @@
 				8465AF2C23E17876006D4B63 /* UserModel.swift in Sources */,
 				84492377241A6127000BE4DF /* User.xcdatamodeld in Sources */,
 				84883896241156D500F4B128 /* FavoritesFriendsViewController.swift in Sources */,
+				84573BD8243627BA00A786CA /* R.generated.swift in Sources */,
 				8465AF2E23E178CD006D4B63 /* ProfileViewModel.swift in Sources */,
 				8465AF2723E16161006D4B63 /* RootViewController.swift in Sources */,
 				84F1FA772421167B004B1759 /* User+CoreDataProperties.swift in Sources */,

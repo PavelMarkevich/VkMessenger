@@ -28,7 +28,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! FriendTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellFriend") as! FriendTableViewCell
         let user = viewModel.getUser(at: indexPath)
         cell.configure(with: user)
         return cell
@@ -58,8 +58,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let user = viewModel.getUser(at: indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let friendProfileViewController = storyboard.instantiateViewController(withIdentifier: "FriendProfileViewController") as? FriendProfileViewController else {
+        guard let friendProfileViewController = R.storyboard.main.friendProfileViewController() else {
             return
         }
         let friendProfileViewModel = FriendProfileViewModel()

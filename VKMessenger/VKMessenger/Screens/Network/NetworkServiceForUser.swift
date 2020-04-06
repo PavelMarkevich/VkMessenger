@@ -19,7 +19,7 @@ class NetworkServiceForUser {
     }
     
     func getPhotoUser(_ user: UserModel?, completion: @escaping (UIImage) -> Void) {
-        let image = UIImage(named: "photo")
+        let image = R.image.photo()
         guard let urlPhoto = user?.urlPhoto else {
             completion(image!)
             return

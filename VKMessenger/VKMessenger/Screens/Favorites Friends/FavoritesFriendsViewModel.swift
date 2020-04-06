@@ -18,7 +18,7 @@ class FavoritesFriendsViewModel {
     let managedContext = AppDelegate.shared.persistentContainer.viewContext
     
     func fearchRequest() {
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "User")
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
         do {
             let user = try managedContext.fetch(fetchRequest)
             grouping(userModel: user)
@@ -26,17 +26,17 @@ class FavoritesFriendsViewModel {
           print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
-    
-    func grouping(userModel: [NSManagedObject]) {
+
+    func grouping(userModel: [User]) {
         usersGroups = [Group]()
         var dictionary = [String: [UserModel]]()
         var users = [UserModel]()
         for user in userModel {
-            let name = user.value(forKey: "name") as! String
-            let bdate = user.value(forKey: "bdate") as? String
-            let status = user.value(forKey: "status") as? String
-            let id = user.value(forKey: "id") as! NSNumber
-            let data = user.value(forKey: "photo") as? Data
+            let name = user.name
+            let bdate = user.bdate
+            let status =  user.status
+            let id = user.id as NSNumber
+            let data = user.photo! as Data
             users.append(UserModel(name: name, bdate: bdate, status: status, urlPhoto: nil, id: id, data: data))
         }
         for user in users {

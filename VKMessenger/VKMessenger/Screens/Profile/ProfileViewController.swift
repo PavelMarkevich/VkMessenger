@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController {
     
     @IBAction func logout(_ sender: Any) {
         service.logout()
-        AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        AppDelegate.shared.window?.rootViewController = R.storyboard.main.loginViewController()
     }
     
     @IBOutlet weak var photoImage: UIImageView!

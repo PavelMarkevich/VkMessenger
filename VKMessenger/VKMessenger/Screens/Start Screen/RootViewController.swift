@@ -18,13 +18,13 @@ class RootViewController: UIViewController {
             switch result {
             case .success(let state):
                 if state == true {
-                    AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
+                    AppDelegate.shared.window?.rootViewController = R.storyboard.main.tabBarController()
                 } else {
-                    AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+                    AppDelegate.shared.window?.rootViewController = R.storyboard.main.loginViewController()
                 }
             case .failure(let error):
                 print(error)
-                AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+                AppDelegate.shared.window?.rootViewController = R.storyboard.main.loginViewController()
             }
         }
     }

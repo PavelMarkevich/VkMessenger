@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-VKMessenger/Pods-VKMessenger-frameworks.sh
+${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework
 ${BUILT_PRODUCTS_DIR}/VK-ios-sdk/VK_ios_sdk.framework

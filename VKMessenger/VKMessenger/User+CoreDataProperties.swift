@@ -17,9 +17,11 @@ extension User {
     }
 
     @NSManaged public var id: Int32
-    @NSManaged public var name: String?
+    @NSManaged public var name: String
     @NSManaged public var bdate: String?
     @NSManaged public var status: String?
-    @NSManaged public var photo: NSDate?
+    @NSManaged public var photo: NSData?
 
 }
+
+

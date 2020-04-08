@@ -53,7 +53,7 @@ class FriendProfileViewModel {
         }
     }
     
-    func chekStateButtton() -> Bool {
+    func friendCheckIsFavourite() -> Bool {
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
         fetch.predicate = NSPredicate(format: "id = %@", user.id)
         do {
@@ -67,12 +67,5 @@ class FriendProfileViewModel {
             print(error)
         }
         return true
-    }
-    
-    func changeStateButton(_ sender: UIButton) {
-        let state = chekStateButtton()
-        if state {
-            sender.isSelected = true
-        }
     }
 }

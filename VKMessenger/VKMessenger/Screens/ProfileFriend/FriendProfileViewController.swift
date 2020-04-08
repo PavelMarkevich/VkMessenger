@@ -17,23 +17,27 @@ class FriendProfileViewController: UIViewController {
     @IBOutlet weak var bdateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var photoImage: UIImageView!
-    @IBOutlet weak var favoritesFriends: UIButton!
+    @IBOutlet weak var favoritesFriends: UIBarButtonItem!
     
     @IBAction func addOrRemove(_ sender: UIButton) {
-        let state = viewModel.chekStateButtton()
-        if state {
-            viewModel.delete()
-            sender.isSelected = false
+        let controller = navigationController?.viewControllers[0]
+        if controller is FriendsViewController {
+            if viewModel.friendCheckIsFavourite() {
+                viewModel.delete()
+            } else {
+                viewModel.save()
+            }
+             favoritesFriends.title = viewModel.friendCheckIsFavourite() ? "Delete" : "Add"
         } else {
-            sender.isSelected = true
-            viewModel.save()
-        }  
+            viewModel.delete()
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         update()
-        viewModel.changeStateButton(favoritesFriends)
+        favoritesFriends.title = viewModel.friendCheckIsFavourite() ? "Delete" : "Add"
     }
     
     func update() {

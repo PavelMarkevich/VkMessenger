@@ -12,15 +12,15 @@ import UIKit
 class NetworkServiceForUser {
     
     let session = URLSession.shared
-    var taskStorage: [NSNumber : URLSessionDataTask] =  [:]
+    var taskStorage: [NSNumber? : URLSessionDataTask] =  [:]
     
     func cancelForUser(_ user: UserModel) {
         taskStorage[user.id]?.cancel()
     }
     
-    func getPhotoUser(_ user: UserModel, completion: @escaping (UIImage) -> Void) {
-        let image = UIImage(named: "photo")
-        guard let urlPhoto = user.urlPhoto else {
+    func getPhotoUser(_ user: UserModel?, completion: @escaping (UIImage) -> Void) {
+        let image = R.image.photo()
+        guard let urlPhoto = user?.urlPhoto else {
             completion(image!)
             return
         }
@@ -47,7 +47,7 @@ class NetworkServiceForUser {
             }
         }
         task.resume()
-        taskStorage[user.id] = task
+        taskStorage[user?.id] = task
     }
 }
 

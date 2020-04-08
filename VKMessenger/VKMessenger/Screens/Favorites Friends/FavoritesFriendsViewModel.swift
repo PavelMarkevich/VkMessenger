@@ -1,45 +1,45 @@
 //
-//  FriendViewModel.swift
+//  FavoritesFriendsViewModel.swift
 //  VKMessenger
 //
-//  Created by Admin on 29/01/2020.
+//  Created by Admin on 11/03/2020.
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
 import Foundation
-import VK_ios_sdk
+import UIKit
+import CoreData
 
-
-struct Group {
-    var title: String
-    var usersModels: [UserModel]
-}
-
-class FriendViewModel {
+class FavoritesFriendsViewModel {
     
-    let service = VKSDKService()
     var usersGroups = [Group]()
     var filterUsersGroups = [Group]()
-
-    func loadModel(completion: @escaping (Result<Void, Error>) -> Void) {
-        let request = service.getFriends()
-        request?.execute(resultBlock: { response in
-            var array = [VKUsersArray]()
-            var arrayUser = [UserModel]()
-            array.append((response?.parsedModel as! VKUsersArray))
-            for i in 0..<array[0].count {
-                arrayUser.append(UserModel(name: array[0][i].first_name + " " + array[0][i].last_name, bdate: array[0][i].bdate, status: array[0][i].status, urlPhoto: array[0][i].photo_200_orig, id: array[0][i].id, data: nil))
-            }
-            self.grouping(userModel: arrayUser)
-            completion(.success(()))
-        }, errorBlock: { error in
-            completion(.failure(error ?? NSError()))
-        })
-    }
     
-    func grouping(userModel: [UserModel]) {
+    let managedContext = AppDelegate.shared.persistentContainer.viewContext
+    
+    func fearchRequest() {
+        let fetchRequest: NSFetchRequest<User> = User.fetchRequest()
+        do {
+            let user = try managedContext.fetch(fetchRequest)
+            grouping(userModel: user)
+        } catch let error as NSError {
+          print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+
+    func grouping(userModel: [User]) {
+        usersGroups = [Group]()
         var dictionary = [String: [UserModel]]()
+        var users = [UserModel]()
         for user in userModel {
+            let name = user.name
+            let bdate = user.bdate
+            let status =  user.status
+            let id = user.id as NSNumber
+            let data = user.photo! as Data
+            users.append(UserModel(name: name, bdate: bdate, status: status, urlPhoto: nil, id: id, data: data))
+        }
+        for user in users {
             let userKey = String(user.name.prefix(1))
             if var userValues = dictionary[userKey] {
                 userValues.append(user)
@@ -81,4 +81,3 @@ class FriendViewModel {
         }
     }
 }
-

@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		581738E97B82BE9ACF70B408 /* Pods_VKMessenger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 325BC3B7BB998E0201BB798D /* Pods_VKMessenger.framework */; };
+		84492377241A6127000BE4DF /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84492375241A6127000BE4DF /* User.xcdatamodeld */; };
+		844F95CA241937B500C146D2 /* FavoritesFriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F95C9241937B500C146D2 /* FavoritesFriendsViewModel.swift */; };
+		844F95CC2419394400C146D2 /* FriendProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844F95CB2419394400C146D2 /* FriendProfileViewModel.swift */; };
+		84573BD8243627BA00A786CA /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84573BD7243627B900A786CA /* R.generated.swift */; };
 		8465AF2723E16161006D4B63 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2623E16161006D4B63 /* RootViewController.swift */; };
 		8465AF2A23E16235006D4B63 /* VKSDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2923E16235006D4B63 /* VKSDKService.swift */; };
 		8465AF2C23E17876006D4B63 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2B23E17876006D4B63 /* UserModel.swift */; };
 		8465AF2E23E178CD006D4B63 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2D23E178CD006D4B63 /* ProfileViewModel.swift */; };
 		8465AF3023E17EE9006D4B63 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */; };
 		8465AF3223E1A2E3006D4B63 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */; };
+		84883896241156D500F4B128 /* FavoritesFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84883895241156D500F4B128 /* FavoritesFriendsViewController.swift */; };
+		84883898241158F300F4B128 /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84883897241158F300F4B128 /* FavoritesTableViewCell.swift */; };
 		848BC54924094C7B00A318D2 /* NetworkServiceForUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848BC54824094C7B00A318D2 /* NetworkServiceForUser.swift */; };
 		848D9C10240D1C3D0089C3A1 /* FriendProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D9C0F240D1C3D0089C3A1 /* FriendProfileViewController.swift */; };
 		8490F80123F2F188008B6CC4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 8490F80023F2F188008B6CC4 /* .gitignore */; };
@@ -25,17 +31,25 @@
 		84ED76B823992F190034C588 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ED76B623992F190034C588 /* LaunchScreen.storyboard */; };
 		84ED76C7239957A50034C588 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76C6239957A50034C588 /* FriendsViewController.swift */; };
 		84ED76C9239957BB0034C588 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ED76C8239957BB0034C588 /* ProfileViewController.swift */; };
+		84F1FA772421167B004B1759 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1FA762421167B004B1759 /* User+CoreDataProperties.swift */; };
+		84F1FA782421167B004B1759 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F1FA752421167B004B1759 /* User+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		325BC3B7BB998E0201BB798D /* Pods_VKMessenger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKMessenger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		766196FF4A5BBEE91C3A0B90 /* Pods-VKMessenger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKMessenger.debug.xcconfig"; path = "Target Support Files/Pods-VKMessenger/Pods-VKMessenger.debug.xcconfig"; sourceTree = "<group>"; };
+		84492376241A6127000BE4DF /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
+		844F95C9241937B500C146D2 /* FavoritesFriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFriendsViewModel.swift; sourceTree = "<group>"; };
+		844F95CB2419394400C146D2 /* FriendProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewModel.swift; sourceTree = "<group>"; };
+		84573BD7243627B900A786CA /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		8465AF2623E16161006D4B63 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		8465AF2923E16235006D4B63 /* VKSDKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKSDKService.swift; sourceTree = "<group>"; };
 		8465AF2B23E17876006D4B63 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8465AF2D23E178CD006D4B63 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		8465AF2F23E17EE9006D4B63 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
 		8465AF3123E1A2E3006D4B63 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		84883895241156D500F4B128 /* FavoritesFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesFriendsViewController.swift; sourceTree = "<group>"; };
+		84883897241158F300F4B128 /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
 		848BC54824094C7B00A318D2 /* NetworkServiceForUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceForUser.swift; sourceTree = "<group>"; };
 		848D9C0F240D1C3D0089C3A1 /* FriendProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendProfileViewController.swift; sourceTree = "<group>"; };
 		8490F80023F2F188008B6CC4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -49,6 +63,8 @@
 		84ED76B923992F190034C588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84ED76C6239957A50034C588 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		84ED76C8239957BB0034C588 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		84F1FA752421167B004B1759 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84F1FA762421167B004B1759 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B4690FA0B73F5136900591F5 /* Pods-VKMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKMessenger.release.xcconfig"; path = "Target Support Files/Pods-VKMessenger/Pods-VKMessenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,10 +107,21 @@
 			path = "Start Screen";
 			sourceTree = "<group>";
 		};
+		84883894241156B000F4B128 /* Favorites Friends */ = {
+			isa = PBXGroup;
+			children = (
+				84883895241156D500F4B128 /* FavoritesFriendsViewController.swift */,
+				844F95C9241937B500C146D2 /* FavoritesFriendsViewModel.swift */,
+				84883897241158F300F4B128 /* FavoritesTableViewCell.swift */,
+			);
+			path = "Favorites Friends";
+			sourceTree = "<group>";
+		};
 		848D9C0E240D1BB80089C3A1 /* ProfileFriend */ = {
 			isa = PBXGroup;
 			children = (
 				848D9C0F240D1C3D0089C3A1 /* FriendProfileViewController.swift */,
+				844F95CB2419394400C146D2 /* FriendProfileViewModel.swift */,
 			);
 			path = ProfileFriend;
 			sourceTree = "<group>";
@@ -137,11 +164,15 @@
 		84ED76AA23992F180034C588 /* VKMessenger */ = {
 			isa = PBXGroup;
 			children = (
+				84F1FA752421167B004B1759 /* User+CoreDataClass.swift */,
+				84F1FA762421167B004B1759 /* User+CoreDataProperties.swift */,
 				84ED76C1239956CD0034C588 /* Screens */,
 				84ED76AB23992F180034C588 /* AppDelegate.swift */,
+				84573BD7243627B900A786CA /* R.generated.swift */,
 				84ED76B123992F180034C588 /* Main.storyboard */,
 				84ED76B423992F190034C588 /* Assets.xcassets */,
 				84ED76B623992F190034C588 /* LaunchScreen.storyboard */,
+				84492375241A6127000BE4DF /* User.xcdatamodeld */,
 				84ED76B923992F190034C588 /* Info.plist */,
 			);
 			path = VKMessenger;
@@ -150,6 +181,7 @@
 		84ED76C1239956CD0034C588 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				84883894241156B000F4B128 /* Favorites Friends */,
 				84A3EB512407E9DA00057ADB /* Network */,
 				8465AF2523E16130006D4B63 /* Start Screen */,
 				84ED76C5239957350034C588 /* Profile */,
@@ -196,6 +228,7 @@
 			buildConfigurationList = 84ED76BC23992F190034C588 /* Build configuration list for PBXNativeTarget "VKMessenger" */;
 			buildPhases = (
 				18453F19B075F310A6D0E7BE /* [CP] Check Pods Manifest.lock */,
+				84573BD6243626BB00A786CA /* ShellScript */,
 				84ED76A423992F180034C588 /* Sources */,
 				84ED76A523992F180034C588 /* Frameworks */,
 				84ED76A623992F180034C588 /* Resources */,
@@ -280,6 +313,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		84573BD6243626BB00A786CA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		ECCB8F8D53A05C63BE07E730 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,9 +362,17 @@
 				848D9C10240D1C3D0089C3A1 /* FriendProfileViewController.swift in Sources */,
 				84ED76C7239957A50034C588 /* FriendsViewController.swift in Sources */,
 				8465AF2C23E17876006D4B63 /* UserModel.swift in Sources */,
+				84492377241A6127000BE4DF /* User.xcdatamodeld in Sources */,
+				84883896241156D500F4B128 /* FavoritesFriendsViewController.swift in Sources */,
+				84573BD8243627BA00A786CA /* R.generated.swift in Sources */,
 				8465AF2E23E178CD006D4B63 /* ProfileViewModel.swift in Sources */,
 				8465AF2723E16161006D4B63 /* RootViewController.swift in Sources */,
+				84F1FA772421167B004B1759 /* User+CoreDataProperties.swift in Sources */,
+				844F95CA241937B500C146D2 /* FavoritesFriendsViewModel.swift in Sources */,
 				84ED76C9239957BB0034C588 /* ProfileViewController.swift in Sources */,
+				844F95CC2419394400C146D2 /* FriendProfileViewModel.swift in Sources */,
+				84F1FA782421167B004B1759 /* User+CoreDataClass.swift in Sources */,
+				84883898241158F300F4B128 /* FavoritesTableViewCell.swift in Sources */,
 				8465AF3223E1A2E3006D4B63 /* FriendTableViewCell.swift in Sources */,
 				84ED76B023992F180034C588 /* LoginViewController.swift in Sources */,
 				848BC54924094C7B00A318D2 /* NetworkServiceForUser.swift in Sources */,
@@ -461,7 +521,8 @@
 			baseConfigurationReference = 766196FF4A5BBEE91C3A0B90 /* Pods-VKMessenger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VKMessenger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,6 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.VKMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -480,7 +542,8 @@
 			baseConfigurationReference = B4690FA0B73F5136900591F5 /* Pods-VKMessenger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VKMessenger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -489,6 +552,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.VKMessenger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -516,6 +580,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84492375241A6127000BE4DF /* User.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84492376241A6127000BE4DF /* User.xcdatamodel */,
+			);
+			currentVersion = 84492376241A6127000BE4DF /* User.xcdatamodel */;
+			path = User.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 84ED76A023992F180034C588 /* Project object */;
 }

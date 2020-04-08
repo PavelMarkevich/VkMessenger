@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
     @IBAction func authorize(_ sender: Any) {
         servise.login(from: self) { loggedIn in
             if loggedIn {
-                AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController")
+                AppDelegate.shared.window?.rootViewController = R.storyboard.main.tabBarController()
             }
         }
     }

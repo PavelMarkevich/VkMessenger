@@ -16,15 +16,12 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        photoImage.layer.cornerRadius = 30
-        photoImage.contentMode = .scaleToFill
-        photoImage.layer.masksToBounds = true
         loadProfile()
     }
     
     @IBAction func logout(_ sender: Any) {
         service.logout()
-        AppDelegate.shared.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController")
+        AppDelegate.shared.window?.rootViewController = R.storyboard.main.loginViewController()
     }
     
     @IBOutlet weak var photoImage: UIImageView!

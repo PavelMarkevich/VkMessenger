@@ -63,8 +63,8 @@
 		84ED76B923992F190034C588 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84ED76C6239957A50034C588 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		84ED76C8239957BB0034C588 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		84F1FA752421167B004B1759 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "/Users/admin/Desktop/VK/VKMessenger/VKMessenger/User+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		84F1FA762421167B004B1759 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "/Users/admin/Desktop/VK/VKMessenger/VKMessenger/User+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		84F1FA752421167B004B1759 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		84F1FA762421167B004B1759 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B4690FA0B73F5136900591F5 /* Pods-VKMessenger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKMessenger.release.xcconfig"; path = "Target Support Files/Pods-VKMessenger/Pods-VKMessenger.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
